@@ -5,41 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/04 17:35:31 by skim              #+#    #+#             */
-/*   Updated: 2021/07/04 19:39:11 by skim             ###   ########.fr       */
+/*   Created: 2021/07/02 15:37:50 by skim              #+#    #+#             */
+/*   Updated: 2021/07/02 16:46:51 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "Pony.hpp"
 
-std::string	randomName()
+void	ponyOnTheStack(void)
 {
-	std::string	name;
+	Pony	sPony("stack");
 
-	name += (char)(rand() % 26 + 'A');
-	name += (char)(rand() % 10 + '0');
-	
-	return (name);
+	std::cout << sPony.getName() << std::endl;
 }
 
-Zombie	*randomChump()
+void	ponyOnTheHeap(void)
 {
-	Zombie *zombie = ZombieEvent::newZombie(randomName());
-	zombie->announce();
-	return (zombie);
+	Pony	*hPony = new Pony("heap");
+
+	std::cout << hPony->getName() << std::endl;
+	delete hPony;
+	hPony = 0;
 }
 
 int		main(void)
 {
-	srand((unsigned int)time(NULL));
-	Zombie s_zombie = Zombie("stack_zombie", "stack_type");
-	s_zombie.announce();
-
-	Zombie *h_zombie;
-	for(int i = 0; i < 10; i++)
-	{
-		h_zombie = randomChump();
-		delete h_zombie;
-	}
+	std::cout << "pony on the stack" << std::endl;
+	ponyOnTheStack();
+	std::cout << "pony on the heap" << std::endl;
+	ponyOnTheHeap();
 	return (0);
 }
