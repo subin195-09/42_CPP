@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:58:12 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 21:30:46 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/07 21:33:59 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class	HumanA {
 	private:
 		std::string		name;
-		Weapon			weapon;
+		const Weapon	&weapon;
 	public:
 		HumanA(std::string _name, Weapon _weapon);
 		void	attack();
