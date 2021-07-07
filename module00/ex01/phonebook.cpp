@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 16:01:42 by skim              #+#    #+#             */
-/*   Updated: 2021/07/01 21:32:18 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/07 15:37:19 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,17 @@ void    searchInfo(Phonebook pb[8], int size)
 	}
 }
 
+std::string	makeUpper(std::string cmd)
+{
+	std::string ret;
+	int	i;
+	
+	i = -1;
+	while (cmd[++i])
+		ret.append(1, toupper(cmd[i]));
+	return (ret);
+}
+
 int     main(void)
 {
 	Phonebook	pb[8];
@@ -73,15 +84,15 @@ int     main(void)
 	{
 		std::cout << "Enter a command : ";
 		getline(std::cin, com);
+		com = makeUpper(com);
 		if (com == "ADD")
-		{
-			if (i == 8)
-				std::cout << "Phonebook Full!" << std::endl;
-			else
-				pb[i++].getInfo();
-		}   
+			pb[i++ % 8].getInfo();
 		else if (com == "SEARCH")
+		{
+			if (i > 8)
+				i = 8;
 			searchInfo(pb, i);
+		}
 		else if (com == "EXIT")
 			break ;
 		else

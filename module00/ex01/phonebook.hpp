@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 15:50:15 by skim              #+#    #+#             */
-/*   Updated: 2021/07/02 15:35:50 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/07 15:20:08 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,7 @@ class   Phonebook {
 		std::string	firstName;
 		std::string	lastName;
 		std::string	nickName;
-		std::string	login;
-		std::string	postalAddress;
-		std::string	emailAddress;
 		std::string	phoneNumber;
-		std::string	birthdayDate;
-		std::string	favoriteMeal;
-		std::string	underwearColor;
 		std::string	darkestSecret;
 	public:
 		void	getInfo();
