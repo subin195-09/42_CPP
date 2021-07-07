@@ -6,11 +6,11 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 19:50:10 by skim              #+#    #+#             */
-/*   Updated: 2021/07/04 20:02:54 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/07 20:23:10 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+#include "Zombie.hpp"
 
 std::string	randomType(void)
 {
@@ -29,29 +29,16 @@ std::string	randomType(void)
 	return (type[rand() % 10]);
 }
 
-std::string	randomName(void)
+Zombie	*zombieHorde(int N, std::string name)
 {
-	std::string	name;
-
-	name += (char)(rand() % 26 + 'A');
-	name += (char)(rand() % 10 + '0');
+	Zombie	*horde = new Zombie[42];
 	
-	return (name);
-}
-
-ZombieHorde::ZombieHorde(int _size)
-{
-	size = _size;
-	for(int i = 0; i < size; i++)
+	for(int i = 0; i < N; i++)
 	{
-		horde[i] = new Zombie(randomName(), randomType());
-		std::cout << i;
-		horde[i]->announce();
+		horde[i].name = name;
+		horde[i].type = randomType();
+		std::cout << i << " : ";
+		horde[i].announce();
 	}
-}
-
-ZombieHorde::~ZombieHorde()
-{
-	for(int i = 0; i < size; i++)
-		delete horde[i];
+	return (horde);
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 16:44:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/04 19:35:04 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/07 20:22:55 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 #include <iostream>
 
 class Zombie{
-    private:
+    public:
         std::string name;
 		std::string type;
-    public:
+        Zombie();
 		Zombie(std::string _name, std::string _type);
         void	announce();
 		~Zombie();
 };
+
+Zombie	*zombieHorde(int _size, std::string name);
 
 #endif

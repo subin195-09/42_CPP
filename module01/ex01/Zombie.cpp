@@ -6,11 +6,15 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:03:07 by skim              #+#    #+#             */
-/*   Updated: 2021/07/04 19:38:23 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/07 20:21:41 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+}
 
 Zombie::Zombie(std::string _name, std::string _type)
 {
