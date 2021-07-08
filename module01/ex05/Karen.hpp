@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 15:50:15 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 16:33:31 by skim             ###   ########.fr       */
+/*   Created: 2021/07/08 16:32:03 by skim              #+#    #+#             */
+/*   Updated: 2021/07/08 16:34:54 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef	KAREN_HPP
+# define KAREN_HPP
 
-#include <cstring>
-#include <cctype>
 #include <iostream>
-#include <iomanip>
-#include <sstream>
 
-class   Phonebook {
+class	Karen{
 	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickName;
-		std::string	phoneNumber;
-		std::string	darkestSecret;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 	public:
-		void	getInfo();
-		void	showShortInfo(int i);
-		void	showInfo();
+		void	complain(std::string level);
 };
-
-void	setString(std::string info);
-void    searchInfo(Phonebook pb[8], int size);
 
 #endif

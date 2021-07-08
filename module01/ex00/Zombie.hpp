@@ -6,12 +6,12 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 16:44:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/04 19:35:04 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 16:32:53 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <cstring>
 #include <iostream>

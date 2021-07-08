@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
+/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:59:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 02:15:08 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 16:33:10 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	HUMAN_B_H
-# define HUMAN_B_H
+#ifndef	HUMAN_B_HPP
+# define HUMAN_B_HPP
 
 #include "Weapon.hpp"
 #include <iostream>
