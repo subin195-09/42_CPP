@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 16:01:42 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 19:30:03 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 21:24:00 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int		getIndex(int size)
 	
 	std::cout << "Enter index to get full page : ";
 	std::cin >> i;
+	if (std::cin.eof())
+		exit(1);
 	if (std::cin.fail() || i < 1 || i >= size + 1)
 	{
 		std::cout << "Wrong Index" << std::endl;
@@ -84,6 +86,8 @@ int     main(void)
 	{
 		std::cout << "Enter a command : ";
 		getline(std::cin, com);
+		if (std::cin.eof())
+			exit(1);
 		com = makeUpper(com);
 		if (com == "ADD")
 			pb[i++ % 8].getInfo();

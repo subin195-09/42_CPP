@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:57:51 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 19:24:28 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 21:25:04 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@ void    Phonebook::getInfo()
 {
 	std::cout << "firstName : ";
 	getline(std::cin, firstName);
-	
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "lastName : ";
 	getline(std::cin, lastName);
-	
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "nickName : ";
 	getline(std::cin, nickName);
-	
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "phoneNumber : ";
 	getline(std::cin, phoneNumber);
-	
+	if (std::cin.eof())
+		exit(1);
 	std::cout << "darkestSecret : ";
 	getline(std::cin, darkestSecret);
+	if (std::cin.eof())
+		exit(1);
 }
 
 void    Phonebook::showInfo()
