@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:46:10 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 17:07:04 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 20:08:57 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,38 @@ void	Karen::error(void)
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-void	Karen::complain(std::string level)
+int		return_index(std::string level)
 {
-	void (Karen::*funs[4])(void);
+	std::string levelList[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int			i;
+
+	for (i = 0; i < 4; i++)
+	{
+		if (strcmp(levelList[i], level) == 0)
+			return (i);
+	}
+	return (-1);
+}
+
+Karen	(*return_func(std::string level))(void)
+{
+	void	(Karen::*funs[4])(void);
+	int		i = return_index(level);
 	
 	funs[0] = &Karen::debug;
 	funs[1] = &Karen::info;
 	funs[2] = &Karen::warning;
 	funs[3] = &Karen::error;
+	if (i < 0)
+	{
+		std::cout << "wrong cmd" << std::endl;
+		return (0);
+	}
+	else
+		return (funs[return_index(level)]);
+}
+
+void	Karen::complain(std::string level)
+{
+	return_func(level);	
 }

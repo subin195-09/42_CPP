@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 03:24:59 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 16:25:33 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 22:00:09 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ std::string	ft_replace(std::string line, std::string s1, std::string s2)
 	return (line);
 }
 
+// 인자가 들어오도록 바꾸기
 int			main(void)
 {
 	std::string		filename = "test";
@@ -42,8 +43,8 @@ int			main(void)
 		return (1);
 	}
 	std::string		line;
-	std::string		s1 = "replace";
-	std::string		s2 = ":)";
+	std::string		s1 = "";
+	std::string		s2 = "";
 	
 	while (!fin.eof())
 	{
