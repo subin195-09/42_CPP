@@ -6,7 +6,7 @@
 #    By: skim <skim@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/01 15:50:22 by skim              #+#    #+#              #
-#    Updated: 2021/07/01 15:50:23 by skim             ###   ########.fr        #
+#    Updated: 2021/07/08 19:16:34 by skim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = megaphone.cpp
 all : $(NAME)
 
 $(NAME) : 
-	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@$(CC) $(CFLAGS) -std=c++98 $(SRCS) -o $(NAME)
 
 clean :
 	@rm -rf $(NAME)

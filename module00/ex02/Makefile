@@ -6,7 +6,7 @@
 #    By: skim <skim@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/07 15:40:14 by skim              #+#    #+#              #
-#    Updated: 2021/07/07 15:41:39 by skim             ###   ########.fr        #
+#    Updated: 2021/07/08 19:37:33 by skim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS = Account.cpp tests.cpp
 all : $(NAME)
 
 $(NAME) : 
-	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+	@$(CC) $(CFLAGS) -std=c++98 $(SRCS) -o $(NAME)
 
 clean :
 	@rm -rf $(NAME)

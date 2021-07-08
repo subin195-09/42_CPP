@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 16:01:42 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 15:37:19 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 19:30:03 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,9 @@ int     main(void)
 		else if (com == "SEARCH")
 		{
 			if (i > 8)
-				i = 8;
-			searchInfo(pb, i);
+				searchInfo(pb, 8);
+			else
+				searchInfo(pb, i);
 		}
 		else if (com == "EXIT")
 			break ;
