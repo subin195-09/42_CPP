@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:50:17 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 21:24:39 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 02:54:54 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Weapon {
 		std::string	type;
 	public:
 		Weapon(std::string _type);
-		std::string	&getType(void);
+		std::string	const	&getType(void);
 		void		setType(std::string	_type);
 };
 

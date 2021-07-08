@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 20:59:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 02:15:08 by skim             ###   ########.fr       */
+/*   Created: 2021/07/08 03:24:59 by skim              #+#    #+#             */
+/*   Updated: 2021/07/08 03:26:29 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	HUMAN_B_H
-# define HUMAN_B_H
-
-#include "Weapon.hpp"
 #include <iostream>
+#include <fstream>
 
-class HumanB {
-	private:
-		std::string		name;
-		Weapon	*weapon;
-	public:
-		HumanB(std::string _name);
-		void	setWeapon(Weapon weapon);
-		void	attack();
-};
+int	main(void)
+{
 
-#endif
+}

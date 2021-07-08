@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 21:26:31 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 21:29:02 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 02:16:52 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string _name);
+HumanB::HumanB(std::string _name)
 {
 	this->name = _name;
 }
 
 void	HumanB::setWeapon(Weapon _weapon)
 {
-	this->weapon = _weapon;
+	this->weapon = &_weapon;
 }
 
-HumanB::HumanB(std::string _name, Weapon _weapon)
+void	HumanB::attack(void)
 {
-	this->name = _name;
-	this->weapon = _weapon;
+	std::cout << this->name;
+	std::cout << " attacks with this ";
+	std::cout << weapon->getType() << std::endl;
 }

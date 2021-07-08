@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:53:05 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 21:32:06 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/08 02:55:22 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ Weapon::Weapon(std::string _type)
 	this->type = _type;
 }
 
-std::string	&Weapon::getType(void)
+std::string	const &Weapon::getType(void)
 {
-	std::string	&typeREF = type;
-	
-	return (typeREF);
+	return (type);
 }
 
 void		Weapon::setType(std::string _type)
