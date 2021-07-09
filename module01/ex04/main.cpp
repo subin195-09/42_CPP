@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 03:24:59 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 22:00:09 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/09 16:04:53 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,14 @@ std::string	ft_replace(std::string line, std::string s1, std::string s2)
 }
 
 // 인자가 들어오도록 바꾸기
-int			main(void)
+int			main(int ac, char *av[])
 {
-	std::string		filename = "test";
+	if (ac != 4 || !av[2] || !av[2][0] || !av[3] || !av[3][0])
+	{
+		std::cout << "Error" << std::endl;
+		return (1);
+	}
+	std::string		filename = av[1];
 	std::ifstream	fin(filename);
 	if (fin.fail())
 	{
@@ -43,8 +48,8 @@ int			main(void)
 		return (1);
 	}
 	std::string		line;
-	std::string		s1 = "";
-	std::string		s2 = "";
+	std::string		s1 = av[2];
+	std::string		s2 = av[3];
 	
 	while (!fin.eof())
 	{

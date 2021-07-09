@@ -5,33 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 20:07:46 by skim              #+#    #+#             */
-/*   Updated: 2021/07/09 16:41:07 by skim             ###   ########.fr       */
+/*   Created: 2021/07/09 16:17:31 by skim              #+#    #+#             */
+/*   Updated: 2021/07/09 17:04:02 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
 
-int		main(void)
+int		main(int ac, char *av[])
 {
-	Karen	karen;
+	if (ac != 2)
+	{
+		std::cout << "Wrong Argument" << std::endl;
+		return (1);
+	}
+	Karen		karen;
+	std::string levelList[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int			i = return_index(av[1]);
 
-	std::cout << "complain(DEBUG)" << std::endl;
-	karen.complain("DEBUG");
-	std::cout << std::endl;
-	
-	std::cout << "complain(INFO)" << std::endl;
-	karen.complain("INFO");
-	std::cout << std::endl;
-	
-	std::cout << "complain(WARNING)" << std::endl;
-	karen.complain("WARNING");
-	std::cout << std::endl;
-	
-	std::cout << "complain(ERROR)" << std::endl;
-	karen.complain("ERROR");
-	std::cout << std::endl;
-
-	std::cout << "complain(42)" << std::endl;
-	karen.complain("42");
+	if (i < 0)
+	{
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		return (0);
+	}
+	for (int j = i; j < 4; j++)
+	{
+		std::cout << "[ " + levelList[j] + " ]" << std::endl;
+		karen.complain(levelList[j]);
+		std::cout << std::endl;
+	}
+	return (0);
 }
