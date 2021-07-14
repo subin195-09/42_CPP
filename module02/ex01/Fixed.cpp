@@ -9,15 +9,13 @@ Fixed::Fixed()
 Fixed::Fixed(const int _value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	f_value = _value;
-	value = toInt();
+	value  = _value << fractionNumber;
 }
 
 Fixed::Fixed(const float _value)
 {
 	std::cout << "Float constructor called" << std::endl;
-	f_value = _value;
-	value = toInt();
+	value = roundf(_value * (1 << fractionNumber));
 }
 
 Fixed::Fixed( const Fixed & src )
@@ -48,10 +46,7 @@ Fixed 	&Fixed::operator=( Fixed const &rhs )
 	if (this == &rhs)
 		return (*this);
 	else
-	{
 		this->value = rhs.value;
-		this->f_value = rhs.f_value;
-	}
 	return *this;
 }
 
@@ -63,13 +58,10 @@ std::ostream &operator<<( std::ostream &os, Fixed const & rhs )
 
 int		Fixed::toInt(void) const
 {
-	return (roundf(this->f_value));
+	return ((int)(value >> fractionNumber));
 }
 
 float	Fixed::toFloat(void) const
 {
-	float	temp;
-
-	temp = roundf(this->f_value * (1 << fractionNumber));
-	return (temp / (1 << fractionNumber));
+	return ((float)value / (1 << fractionNumber));
 }

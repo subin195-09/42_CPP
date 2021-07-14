@@ -8,7 +8,6 @@ class Fixed
 {
 	private:
 		int					value;
-		float				f_value;
 		static const int	fractionNumber = 8;
 	public:
 
