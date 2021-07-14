@@ -6,9 +6,12 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:00:50 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 16:42:52 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/14 19:35:45 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 #include <iostream>
 
@@ -38,3 +41,5 @@ class ClapTrap {
 };
 
 std::ostream &	operator<<( std::ostream &os, ClapTrap const & rhs );
+
+#endif

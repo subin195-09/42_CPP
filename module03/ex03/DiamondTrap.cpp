@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:37:49 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 19:27:25 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/14 19:38:53 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap & src )
 	this->operator=(src);
 }
 
-DiamondTrap::DiamondTrap( std::string _Name ) : FragTrap(_Name + "_clap_name"), ScavTrap(_Name + "_clap_name"), ClapTrap(_Name + "_clap_name")
+DiamondTrap::DiamondTrap( std::string _Name ) : ClapTrap(_Name + "_clap_name"), ScavTrap(_Name + "_clap_name"), FragTrap(_Name + "_clap_name")
 {
 	std::cout << "make DiamondTrap" << std::endl;
 	Name_Dia = _Name + "_clap_name";
@@ -42,14 +42,11 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap	&DiamondTrap::operator=( DiamondTrap const & rhs )
 {
-	// if ( this != &rhs )
-	// {
-
-	// }
-	return *this;
+	ClapTrap::operator=(rhs);
+	return (*this);
 }
 
 void		DiamondTrap::whoAmI(void)
 {
-	std::cout << "I'm " << getName() << std::endl;
+	std::cout << "I'm " << ClapTrap::getName() << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:10:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 18:19:38 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/14 19:40:59 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		main(void)
 {
 	DiamondTrap DT1("DT1");
-	DiamondTrap DT2("DT2");
+	DiamondTrap DT2("");
 
 	std::cout << DT1;
 	DT1.attack(DT2.getName());

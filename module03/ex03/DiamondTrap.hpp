@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:31:39 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 18:21:39 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/14 19:39:40 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,4 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		void		whoAmI(void);
 };
 
-std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i );
-
-#endif /* ***************************************************** DIAMONDTRAP_H */
+#endif
