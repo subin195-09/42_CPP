@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 14:10:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 17:18:23 by skim             ###   ########.fr       */
+/*   Created: 2021/07/14 15:29:52 by skim              #+#    #+#             */
+/*   Updated: 2021/07/14 16:52:45 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int		main(void)
+# include "ClapTrap.hpp"
+# include <iostream>
+
+class ScavTrap: public ClapTrap
 {
-	ClapTrap ct1("CT1");
-	ClapTrap ct2("CT2");
+	public:
 
-	std::cout << ct1;
-	ct1.attack(ct2.getName());
-	ct2.takeDamage(ct1.getAttackDamage());
-	ct1.takeDamage(10);
-	ct1.beRepaired(10);
-	std::cout << ct1;
-}
+		ScavTrap();
+		ScavTrap( ScavTrap const & src );
+		ScavTrap( std::string _Name );
+		~ScavTrap();
+		ScavTrap	&operator=( ScavTrap const & rhs );
+		void		guardGate(void);
+};
+
+#endif

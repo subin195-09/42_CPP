@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 14:10:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 17:18:23 by skim             ###   ########.fr       */
+/*   Created: 2021/07/14 17:02:19 by skim              #+#    #+#             */
+/*   Updated: 2021/07/14 17:14:07 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int		main(void)
+# include "ClapTrap.hpp"
+# include <iostream>
+
+class FragTrap: public ClapTrap
 {
-	ClapTrap ct1("CT1");
-	ClapTrap ct2("CT2");
 
-	std::cout << ct1;
-	ct1.attack(ct2.getName());
-	ct2.takeDamage(ct1.getAttackDamage());
-	ct1.takeDamage(10);
-	ct1.beRepaired(10);
-	std::cout << ct1;
-}
+	public:
+
+		FragTrap();
+		FragTrap( FragTrap const & src );
+		FragTrap ( std::string _Name );
+		~FragTrap();
+		FragTrap &		operator=( FragTrap const & rhs );
+		void	highFivesGuys(void);
+
+};
+
+#endif
