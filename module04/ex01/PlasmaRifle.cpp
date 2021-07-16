@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 18:01:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 00:01:43 by skim             ###   ########.fr       */
+/*   Created: 2021/07/16 23:59:24 by skim              #+#    #+#             */
+/*   Updated: 2021/07/17 00:05:27 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "PlasmaRifle.hpp"
 
-Peon::Peon() : Victim("nono") {}
-
-Peon::Peon(std::string _name) : Victim(_name)
+PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 21, 5)
 {
-	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon( const Peon & src ) : Victim("nono")
+PlasmaRifle::PlasmaRifle( const PlasmaRifle & src ) : AWeapon("Plasma Rifle", 21, 5)
 {
 	this->operator=(src);
 }
 
-Peon::~Peon()
+PlasmaRifle::~PlasmaRifle()
 {
-	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon &				Peon::operator=( Peon const & rhs )
+PlasmaRifle	&PlasmaRifle::operator=( PlasmaRifle const & rhs )
 {
-	Victim::operator=(rhs);
+	AWeapon::operator=(rhs);
 	return *this;
 }
 
-void			Peon::getPolymorphed(void) const
+void		PlasmaRifle::attack(void) const
 {
-	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }

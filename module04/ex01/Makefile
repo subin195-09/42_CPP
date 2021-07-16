@@ -6,7 +6,7 @@
 #    By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 14:09:54 by skim              #+#    #+#              #
-#    Updated: 2021/07/16 23:31:10 by skim             ###   ########.fr        #
+#    Updated: 2021/07/16 23:31:02 by skim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = a.out
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = Sorcerer.cpp Victim.cpp Peon.cpp main.cpp
+SRCS = AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp \
+	PowerFist.cpp RadScorpion.cpp SuperMutant.cpp main.cpp
 
 all : $(NAME)
 

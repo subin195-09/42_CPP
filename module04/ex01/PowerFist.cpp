@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   PowerFist.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/16 18:01:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 00:01:43 by skim             ###   ########.fr       */
+/*   Created: 2021/07/17 00:06:18 by skim              #+#    #+#             */
+/*   Updated: 2021/07/17 00:09:24 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "PowerFist.hpp"
 
-Peon::Peon() : Victim("nono") {}
-
-Peon::Peon(std::string _name) : Victim(_name)
+PowerFist::PowerFist() : AWeapon("Plasma Rifle", 50, 8)
 {
-	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon( const Peon & src ) : Victim("nono")
+PowerFist::PowerFist( const PowerFist & src ) : AWeapon("Plasma Rifle", 50, 8)
 {
 	this->operator=(src);
 }
 
-Peon::~Peon()
+PowerFist::~PowerFist()
 {
-	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon &				Peon::operator=( Peon const & rhs )
+PowerFist	&PowerFist::operator=( PowerFist const & rhs )
 {
-	Victim::operator=(rhs);
+	AWeapon::operator=(rhs);
 	return *this;
 }
 
-void			Peon::getPolymorphed(void) const
+void		PowerFist::attack(void) const
 {
-	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
+	std::cout << "* pschhh... SBAM *" << std::endl;
 }
