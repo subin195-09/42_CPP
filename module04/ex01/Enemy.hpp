@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 00:12:40 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 00:27:14 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/17 01:35:36 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Enemy
 		Enemy();
 		Enemy(int _hp, std::string const &_type);
 		Enemy( Enemy const & src );
-		~Enemy();
+		virtual ~Enemy();
 		Enemy 			&operator=( Enemy const & rhs );
 		std::string		getType() const;
 		int				getHP() const;

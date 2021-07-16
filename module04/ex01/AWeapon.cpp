@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 23:40:35 by skim              #+#    #+#             */
-/*   Updated: 2021/07/16 23:53:23 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/17 01:49:57 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ AWeapon::AWeapon()
 {
 }
 
-AWeapon::AWeapon(std::string const & _name, int _apcost, int _damage)
+AWeapon::AWeapon(std::string const & _name, int _damage, int _apcost)
 {
 	name = _name;
 	apcost = _apcost;
@@ -56,10 +56,4 @@ int				AWeapon::getAPCost(void) const
 int				AWeapon::getDamage(void) const
 {
 	return (this->damage);
-}
-
-std::ostream &			operator<<( std::ostream & o, AWeapon const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
 }

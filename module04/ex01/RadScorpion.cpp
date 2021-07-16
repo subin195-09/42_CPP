@@ -1,55 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/17 00:49:14 by skim              #+#    #+#             */
+/*   Updated: 2021/07/17 01:34:30 by skim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RadScorpion.hpp"
 
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
-
-RadScorpion::RadScorpion()
+RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
 {
+	std::cout << "* click click click *" << std::endl;
 }
 
 RadScorpion::RadScorpion( const RadScorpion & src )
 {
+	Enemy::operator=(src);
 }
-
-
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
 
 RadScorpion::~RadScorpion()
 {
+	std::cout << "* SPROTCH *" << std::endl;
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-RadScorpion &				RadScorpion::operator=( RadScorpion const & rhs )
+RadScorpion	&RadScorpion::operator=( RadScorpion const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	Enemy::operator=(rhs);
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, RadScorpion const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */
+// void		RadScorpion::takeDamage(int _damage)
+// {
+// 	Enemy::takeDamage();
+// }

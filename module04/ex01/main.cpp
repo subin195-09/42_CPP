@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:58:08 by skim              #+#    #+#             */
-/*   Updated: 2021/07/16 18:58:51 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/17 01:54:41 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,18 @@
 int main()
 {
 	Character* me = new Character("me");
+
 	std::cout << *me;
+
 	Enemy* b = new RadScorpion();
+
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
+
 	me->equip(pr);
 	std::cout << *me;
 	me->equip(pf);
+	
 	me->attack(b);
 	std::cout << *me;
 	me->equip(pr);
