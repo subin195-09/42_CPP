@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:06:33 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 17:19:53 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 16:56:57 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "make FragTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 20;
 }
 
 FragTrap::FragTrap( const FragTrap & src ) : ClapTrap(src)
@@ -28,9 +28,9 @@ FragTrap::FragTrap( const FragTrap & src ) : ClapTrap(src)
 FragTrap::FragTrap( std::string _Name ) : ClapTrap(_Name)
 {
 	std::cout << "make FragTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 20;
 }
 
 FragTrap::~FragTrap()

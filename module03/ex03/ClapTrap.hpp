@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:00:50 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 19:35:45 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 16:59:42 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string		Name;
 		unsigned int	HitPoints;
 		unsigned int	EnergyPoint;

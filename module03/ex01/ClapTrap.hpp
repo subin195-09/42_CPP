@@ -6,14 +6,14 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:00:50 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 16:42:52 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 16:46:25 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string		Name;
 		unsigned int	HitPoints;
 		unsigned int	EnergyPoint;
@@ -23,10 +23,10 @@ class ClapTrap {
 		ClapTrap( ClapTrap const & src );
 		ClapTrap( std::string _Name );
 		~ClapTrap();
-		ClapTrap	&operator=( ClapTrap const & rhs );
-		void		attack(std::string const &target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
+		ClapTrap		&operator=( ClapTrap const & rhs );
+		void			attack(std::string const &target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 		std::string		getName() const;
 		unsigned int	getHitPoints() const;
 		unsigned int	getEnergyPoint() const;

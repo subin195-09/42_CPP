@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:37:49 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 19:38:53 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 17:08:36 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap()
 {
 	std::cout << "make DiamondTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(30);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 30;
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap & src )
@@ -26,13 +26,13 @@ DiamondTrap::DiamondTrap( const DiamondTrap & src )
 	this->operator=(src);
 }
 
-DiamondTrap::DiamondTrap( std::string _Name ) : ClapTrap(_Name + "_clap_name"), ScavTrap(_Name + "_clap_name"), FragTrap(_Name + "_clap_name")
+DiamondTrap::DiamondTrap( std::string _Name ) : ClapTrap(_Name + "_clap_name"), ScavTrap(), FragTrap()
 {
 	std::cout << "make DiamondTrap" << std::endl;
-	Name_Dia = _Name + "_clap_name";
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(30);
+	this->Name = _Name;
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 30;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -46,7 +46,13 @@ DiamondTrap	&DiamondTrap::operator=( DiamondTrap const & rhs )
 	return (*this);
 }
 
+void		DiamondTrap::attack(std::string const &target)
+{
+	ScavTrap::attack(target);
+}
+
+
 void		DiamondTrap::whoAmI(void)
 {
-	std::cout << "I'm " << ClapTrap::getName() << std::endl;
+	std::cout << "I'm " << this->Name << std::endl;
 }

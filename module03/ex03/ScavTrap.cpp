@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 15:30:03 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 16:58:49 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 17:05:30 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap Destroy" << std::endl;
 }
 
+void		ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap : <" + this->Name + "> attacks <" + target + ">";
+	std::cout << " ,causing <" << this->AttackDamage << "> points of damage!" << std::endl;
+}
 
 ScavTrap	&ScavTrap::operator=( ScavTrap const & rhs )
 {

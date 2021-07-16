@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 15:30:03 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 16:58:49 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 16:46:37 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "make ScavTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap( std::string _Name ) : ClapTrap(_Name)
 {
 	std::cout << "make ScavTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
