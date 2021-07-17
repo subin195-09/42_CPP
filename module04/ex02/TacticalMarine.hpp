@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 03:18:19 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 03:18:26 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/17 15:01:30 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include "ISpaceMarine.hpp"
 # include <iostream>
 
-class TacticalMarine
+class TacticalMarine : public ISpaceMarine
 {
-
 	public:
-
 		TacticalMarine();
 		TacticalMarine( TacticalMarine const & src );
 		~TacticalMarine();

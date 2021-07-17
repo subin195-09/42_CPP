@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 03:16:16 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 03:17:40 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/17 15:03:06 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include "ISpaceMarine.hpp"
 # include <iostream>
 
-class AssaultTerminator
+class AssaultTerminator : public ISpaceMarine
 {
-
 	public:
-
 		AssaultTerminator();
 		AssaultTerminator( AssaultTerminator const & src );
 		~AssaultTerminator();

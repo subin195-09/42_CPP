@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 02:59:02 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 03:00:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/17 15:14:26 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
 
 class Squad : public ISquad
 {
+	private:
+		ISpaceMarine	**im;
+		int				count;
 	public:
-
 		Squad();
 		Squad( Squad const & src );
 		~Squad();
@@ -30,6 +32,4 @@ class Squad : public ISquad
 		int				push(ISpaceMarine *ism);
 };
 
-std::ostream &			operator<<( std::ostream & o, Squad const & i );
-
-#endif /* *********************************************************** SQUAD_H */
+#endif
