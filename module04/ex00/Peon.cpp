@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 18:01:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 00:01:43 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/19 15:30:49 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ Peon::~Peon()
 	std::cout << "Bleuark..." << std::endl;
 }
 
-Peon &				Peon::operator=( Peon const & rhs )
+Peon		&Peon::operator=( Peon const & rhs )
 {
 	Victim::operator=(rhs);
 	return *this;
 }
 
-void			Peon::getPolymorphed(void) const
+void		Peon::getPolymorphed(void) const
 {
 	std::cout << getName() << " has been turned into a pink pony!" << std::endl;
 }
