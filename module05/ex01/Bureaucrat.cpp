@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:48:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/19 16:50:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/20 15:41:48 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ Bureaucrat::Bureaucrat(std::string const _name, int _grade) : name(_name)
 {
 	grade = _grade;
 	if (grade > 150)
-		throw GradeTooLowExcept();
+		throw GradeTooLowException();
 	else if (grade < 1)
-		throw GradeTooHighExcept();
+		throw GradeTooHighException();
 }
-
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src )
 {
@@ -35,7 +34,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src )
 Bureaucrat::~Bureaucrat()
 {
 }
-
 
 Bureaucrat		&Bureaucrat::operator=( Bureaucrat const & rhs )
 {
@@ -67,7 +65,7 @@ void		Bureaucrat::increaseGrade(void)
 	if (grade < 150)
 		grade++;
 	else
-		throw GradeTooLowExcept();
+		throw GradeTooLowException();
 }
 
 void		Bureaucrat::decreaseGrade(void)
@@ -75,15 +73,30 @@ void		Bureaucrat::decreaseGrade(void)
 	if (grade > 1)
 		grade--;
 	else
-		throw GradeTooHighExcept();
+		throw GradeTooHighException();
 }
 
-const char	*Bureaucrat::GradeTooHighExcept::what(void) const throw()
+int			Bureaucrat::signForm(Form &form)
+{
+	if (form.getSignGrade() >= grade)
+	{
+		std::cout << name << " signs " << form.getName() << std::endl;
+		return (1);
+	}
+	else
+	{
+		std::cout << name << " cannot signs " << form.getName() << " because ";
+		throw Form::GradeTooLowException();
+		return (0);
+	}
+}
+
+const char	*Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	return ("TOO HIGH GRADE");
 }
 
-const char	*Bureaucrat::GradeTooLowExcept::what(void) const throw()
+const char	*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	return ("TOO LOW GRADE");
 }
