@@ -6,30 +6,41 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:15:14 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:00:21 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/20 17:17:10 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
-	Bureaucrat a("Bure_A", 10);
+	srand((unsigned int)time(NULL));
+	Bureaucrat a("Bure_A", 5);
 	Bureaucrat b("Bure_B", 75);
 	Bureaucrat c("Bure_C", 150);
-	Form test10("test_10", 10, 5);
-	Form test75("test_75", 75, 70);
-	Form test150("test_150", 150, 145);
+
+	ShrubberyCreationForm shr("shrubbery");
+	RobotomyRequestForm rob("roboto");
+	PresidentialPardonForm pre("president");
+
 	std::cout << a;
 	std::cout << b;
 	std::cout << c;
+
+	std::cout << shr;
+	std::cout << rob;
+	std::cout << pre;
+
 	std::cout << std::endl;
 	try
 	{
-		a.signForm(test150);
-		a.signForm(test75);
-		a.signForm(test10);
+		a.executeForm(shr);
+		a.executeForm(rob);
+		a.executeForm(pre);
 	}
 	catch(const std::exception& e)
 	{
@@ -38,9 +49,9 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		b.signForm(test150);
-		b.signForm(test75);
-		b.signForm(test10);
+		b.executeForm(shr);
+		b.executeForm(rob);
+		b.executeForm(pre);
 	}
 	catch(const std::exception& e)
 	{
@@ -49,9 +60,9 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		c.signForm(test150);
-		c.signForm(test75);
-		c.signForm(test10);
+		c.executeForm(shr);
+		c.executeForm(rob);
+		c.executeForm(pre);
 	}
 	catch(const std::exception& e)
 	{

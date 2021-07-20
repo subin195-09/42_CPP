@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:28:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:00:44 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/20 17:03:23 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class Bureaucrat
 		void		increaseGrade(void);
 		void		decreaseGrade(void);
 		void		signForm(Form &form);
+		void		executeForm(Form &form);
 		class		GradeTooHighException : public std::exception
 		{
 			public:
