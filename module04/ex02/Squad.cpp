@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 15:03:59 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 15:37:34 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/20 14:21:32 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,19 @@ Squad::~Squad()
 
 Squad &				Squad::operator=( Squad const & rhs )
 {
-	if (this->im)
+	if (this != & rhs)
 	{
-		for (int i = 0; i < this->count; i++)
-			delete this->im[i];
-		delete this->im;
-		this->im = 0;
+		if (this->im)
+		{
+			for (int i = 0; i < this->count; i++)
+				delete this->im[i];
+			delete this->im;
+			this->im = 0;
+		}
+		this->count = 0;
+		for(int i = 0; i < rhs.getCount(); i++)
+			this->push(rhs.getUnit(i)->clone());
 	}
-	this->count = 0;
-	for(int i = 0; i < rhs.getCount(); i++)
-		this->push(rhs.getUnit(i)->clone());
 	return *this;
 }
 
