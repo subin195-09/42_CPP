@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:15:14 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:17:10 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:29:14 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,20 @@ int main()
 	RobotomyRequestForm rob("roboto");
 	PresidentialPardonForm pre("president");
 
-	std::cout << a;
-	std::cout << b;
-	std::cout << c;
-
-	std::cout << shr;
-	std::cout << rob;
-	std::cout << pre;
-
+	std::cout << std::endl;
+	try
+	{
+		a.executeForm(shr);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << std::endl;
+	a.signForm(shr);
+	a.signForm(rob);
+	a.signForm(pre);
+	std::cout << std::endl;
 	std::cout << std::endl;
 	try
 	{
@@ -46,6 +52,7 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 	std::cout << std::endl;
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:11:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 16:15:44 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:23:59 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("president", 25,5)
 {
+	target = "none";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string _name)
-: Form(_name, 25,5) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string _target)
+: Form("president", 25,5), target(_target) {}
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
-: Form("shrubberry", 25,5)
+: Form("president", 25,5)
 {
 	this->operator=(src);
 }
@@ -41,5 +42,10 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=( PresidentialPardonFor
 
 void					PresidentialPardonForm::execute(Bureaucrat const &executor)
 {
-	std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	if (sign == false)
+		throw Form::UnsignedForm();
+	else if (executor.getGrade() > this->exeGrade)
+		throw Form::GradeTooLowException();
+	else
+		std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

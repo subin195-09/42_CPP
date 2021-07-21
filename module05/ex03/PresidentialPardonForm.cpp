@@ -6,22 +6,22 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:11:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 16:15:44 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 15:56:09 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("president", 25,5)
+PresidentialPardonForm::PresidentialPardonForm() : target("none"), Form("president", 25,5)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string _name)
-: Form(_name, 25,5) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string _target)
+: target(_target), Form("president", 25,5) {}
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src )
-: Form("shrubberry", 25,5)
+: Form("president", 25,5)
 {
 	this->operator=(src);
 }

@@ -6,18 +6,18 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:08:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:16:34 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 15:57:15 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("roboto", 72,45)
+RobotomyRequestForm::RobotomyRequestForm() : target("none"), Form("roboto", 72,45)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string _name)
-: Form(_name, 72,45) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string _target)
+: target(_target), Form("roboto", 72,45) {}
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 : Form("roboto", 72,45)

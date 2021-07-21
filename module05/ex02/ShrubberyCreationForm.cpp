@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:57:28 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:15:10 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:24:14 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubberry", 145,137)
 {
+	target = "none";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string _name)
-: Form(_name, 145,137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string _target)
+: Form("shrubbery", 145,137), target(_target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
 : Form("shrubberry", 145,137)
@@ -45,39 +46,46 @@ const char* ShrubberyCreationForm::FileOpenException::what() const throw()
 
 void					ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
-	std::ofstream fo(executor.getName() + "_shrubbery");
-	if (!fo.is_open() || fo.bad())
-		throw FileOpenException();
+	if (sign == false)
+		throw Form::UnsignedForm();
+	else if (executor.getGrade() > this->exeGrade)
+		throw Form::GradeTooLowException();
+	else
+	{
+		std::ofstream fo(target + "_shrubbery");
+		if (!fo.is_open() || fo.bad())
+			throw FileOpenException();
 
-	fo << "              _{\\ _{\\{\\/}/}/}__" << std::endl;
-	fo << "             {/{/\\}{/{/\\}(\\}{/\\} _" << std::endl;
-	fo << "            {/{/\\}{/{/\\}(_)\\}{/{/\\}  _" << std::endl;
-	fo << "         {\\{/(\\}\\}{/{/\\}\\}{/){/\\}\\} /\\}" << std::endl;
-	fo << "        {/{/(_)/}{\\{/)\\}{\\(_){/}/}/}/}" << std::endl;
-	fo << "       _{\\{/{/{\\{/{/(_)/}/}/}{\\(/}/}/}" << std::endl;
-	fo << "      {/{/{\\{\\{\\(/}{\\{\\/}/}{\\}(_){\\/}\\}" << std::endl;
-	fo << "      _{\\{/{\\{/(_)\\}/}{/{/{/\\}\\})\\}{/\\}" << std::endl;
-	fo << "     {/{/{\\{\\(/}{/{\\{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
-	fo << "      {\\{\\/}(_){\\{\\{\\/}/}(_){\\/}{\\/}/})/}" << std::endl;
-	fo << "       {/{\\{\\/}{/{\\{\\{\\/}/}{\\{\\/}/}\\}(_)" << std::endl;
-	fo << "      {/{\\{\\/}{/){\\{\\{\\/}/}{\\{\\(/}/}\\}/}" << std::endl;
-	fo << "       {/{\\{\\/}(_){\\{\\{\\(/}/}{\\(_)/}/}\\}" << std::endl;
-	fo << "         {/({/{\\{/{\\{\\/}(_){\\/}/}\\}/}(\\}" << std::endl;
-	fo << "          (_){/{\\/}{\\{\\/}/}{\\{\\)/}/}(_)" << std::endl;
-	fo << "            {/{/{\\{\\/}{/{\\{\\{\\(_)/}" << std::endl;
-	fo << "             {/{\\{\\{\\/}/}{\\{\\\\}/}" << std::endl;
-	fo << "              {){/ {\\/}{\\/} \\}\\}" << std::endl;
-	fo << "              (_)  \\.-'.-/" << std::endl;
-	fo << "          __...--- |'-.-'| --...__" << std::endl;
-	fo << "   _...--.   .-'   |'-.-'|  ' -.  ..--..__" << std::endl;
-	fo << " -.    ' .  . '    |.'-._| '  . .  '   jro" << std::endl;
-	fo << " .  '-  '    .--'  | '-.'|    .  '  . '" << std::endl;
-	fo << "          ' ..     |'-_.-|" << std::endl;
-	fo << "  .  '  .       _.-|-._ -|-._  .  '  ." << std::endl;
-	fo << "              .'   |'- .-|   '." << std::endl;
-	fo << "  ..-'   ' .  '.   `-._.-�   .'  '  - ." << std::endl;
-	fo << "   .-' '        '-._______.-'     '  ." << std::endl;
-	fo << "        .      ~," << std::endl;
+		fo << "              _{\\ _{\\{\\/}/}/}__" << std::endl;
+		fo << "             {/{/\\}{/{/\\}(\\}{/\\} _" << std::endl;
+		fo << "            {/{/\\}{/{/\\}(_)\\}{/{/\\}  _" << std::endl;
+		fo << "         {\\{/(\\}\\}{/{/\\}\\}{/){/\\}\\} /\\}" << std::endl;
+		fo << "        {/{/(_)/}{\\{/)\\}{\\(_){/}/}/}/}" << std::endl;
+		fo << "       _{\\{/{/{\\{/{/(_)/}/}/}{\\(/}/}/}" << std::endl;
+		fo << "      {/{/{\\{\\{\\(/}{\\{\\/}/}{\\}(_){\\/}\\}" << std::endl;
+		fo << "      _{\\{/{\\{/(_)\\}/}{/{/{/\\}\\})\\}{/\\}" << std::endl;
+		fo << "     {/{/{\\{\\(/}{/{\\{\\{\\/})/}{\\(_)/}/}\\}" << std::endl;
+		fo << "      {\\{\\/}(_){\\{\\{\\/}/}(_){\\/}{\\/}/})/}" << std::endl;
+		fo << "       {/{\\{\\/}{/{\\{\\{\\/}/}{\\{\\/}/}\\}(_)" << std::endl;
+		fo << "      {/{\\{\\/}{/){\\{\\{\\/}/}{\\{\\(/}/}\\}/}" << std::endl;
+		fo << "       {/{\\{\\/}(_){\\{\\{\\(/}/}{\\(_)/}/}\\}" << std::endl;
+		fo << "         {/({/{\\{/{\\{\\/}(_){\\/}/}\\}/}(\\}" << std::endl;
+		fo << "          (_){/{\\/}{\\{\\/}/}{\\{\\)/}/}(_)" << std::endl;
+		fo << "            {/{/{\\{\\/}{/{\\{\\{\\(_)/}" << std::endl;
+		fo << "             {/{\\{\\{\\/}/}{\\{\\\\}/}" << std::endl;
+		fo << "              {){/ {\\/}{\\/} \\}\\}" << std::endl;
+		fo << "              (_)  \\.-'.-/" << std::endl;
+		fo << "          __...--- |'-.-'| --...__" << std::endl;
+		fo << "   _...--.   .-'   |'-.-'|  ' -.  ..--..__" << std::endl;
+		fo << " -.    ' .  . '    |.'-._| '  . .  '   jro" << std::endl;
+		fo << " .  '-  '    .--'  | '-.'|    .  '  . '" << std::endl;
+		fo << "          ' ..     |'-_.-|" << std::endl;
+		fo << "  .  '  .       _.-|-._ -|-._  .  '  ." << std::endl;
+		fo << "              .'   |'- .-|   '." << std::endl;
+		fo << "  ..-'   ' .  '.   `-._.-�   .'  '  - ." << std::endl;
+		fo << "   .-' '        '-._______.-'     '  ." << std::endl;
+		fo << "        .      ~," << std::endl;
 
-	fo.close();
+		fo.close();
+	}
 }

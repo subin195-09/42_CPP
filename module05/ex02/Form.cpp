@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:05:27 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:02:38 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:25:41 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,9 @@ const char	*Form::GradeTooHighException::what(void) const throw()
 const char	*Form::GradeTooLowException::what(void) const throw()
 {
 	return ("grade is too low");
+}
+
+const char	*Form::UnsignedForm::what(void) const throw()
+{
+	return ("unsigned!");
 }

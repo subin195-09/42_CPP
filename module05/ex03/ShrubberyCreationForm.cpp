@@ -6,18 +6,18 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:57:28 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:15:10 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 15:58:39 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("shrubberry", 145,137)
+ShrubberyCreationForm::ShrubberyCreationForm() : target("none"), Form("shrubberry", 145,137)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string _name)
-: Form(_name, 145,137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string _target)
+: target(_target), Form("shrubbery", 145,137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src )
 : Form("shrubberry", 145,137)
@@ -45,7 +45,7 @@ const char* ShrubberyCreationForm::FileOpenException::what() const throw()
 
 void					ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
-	std::ofstream fo(executor.getName() + "_shrubbery");
+	std::ofstream fo(target + "_shrubbery");
 	if (!fo.is_open() || fo.bad())
 		throw FileOpenException();
 

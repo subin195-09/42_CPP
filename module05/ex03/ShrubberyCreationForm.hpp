@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:55:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 16:44:00 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 15:57:55 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 
 class ShrubberyCreationForm : public Form
 {
+	private:
+		std::string	target;
 	public:
 		ShrubberyCreationForm();
-		ShrubberyCreationForm( std::string _name );
+		ShrubberyCreationForm( std::string _target );
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm	&operator=( ShrubberyCreationForm const & rhs );
