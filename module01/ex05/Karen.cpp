@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:46:10 by skim              #+#    #+#             */
-/*   Updated: 2021/07/09 16:41:19 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:56:10 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	Karen::complain(std::string level)
 {
 	void	(Karen::*funs[4])(void);
 	int		i = return_index(level);
-	
+
 	if (i < 0)
 	{
 		std::cout << "Wrong Complain" << std::endl;
