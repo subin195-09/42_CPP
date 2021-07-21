@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:48:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:04:49 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:27:12 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,15 +92,17 @@ void		Bureaucrat::signForm(Form &form)
 
 void		Bureaucrat::executeForm(Form &form)
 {
-	if (form.getExeGrade() >= grade)
-	{
-		std::cout << name << " executes " << form.getName() << std::endl;
-		form.execute(*this);
-	}
-	else
+	if (form.getSign() == false)
+		throw Form::UnsignedForm();
+	else if (grade > form.getExeGrade())
 	{
 		std::cout << name << " cannot executes " << form.getName() << " because ";
 		throw Form::GradeTooLowException();
+	}
+	else
+	{
+		std::cout << name << " executes " << form.getName() << std::endl;
+		form.execute(*this);
 	}
 }
 

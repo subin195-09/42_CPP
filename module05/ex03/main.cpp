@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:15:14 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 15:47:25 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:55:20 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,18 @@
 
 int main()
 {
-	Intern someRandomIntern;
-	Form* rrf;
-	
+	Intern	someRandomIntern;
+	Form*	rrf;
+	Form*	test;
+
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-		return 0;
+	try
+	{
+		test = someRandomIntern.makeForm("test request", "Bender2");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	return (0);
 }

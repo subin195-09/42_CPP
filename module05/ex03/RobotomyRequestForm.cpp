@@ -6,18 +6,19 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:08:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 15:57:15 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:24:07 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : target("none"), Form("roboto", 72,45)
+RobotomyRequestForm::RobotomyRequestForm() : Form("roboto", 72,45)
 {
+	target = "none";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _target)
-: target(_target), Form("roboto", 72,45) {}
+: Form("roboto", 72,45), target(_target) {}
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src )
 : Form("roboto", 72,45)
@@ -40,9 +41,16 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const &
 
 void					RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
-	std::cout << "Drrrrr...." << std::endl;
-	if (rand() % 2)
-		std::cout << executor.getName() << " has been robotomized" << std::endl;
+	if (sign == false)
+		throw Form::UnsignedForm();
+	else if (executor.getGrade() > this->exeGrade)
+		throw Form::GradeTooLowException();
 	else
-		std::cout << executor.getName() << " fail!" << std::endl;
+	{
+		std::cout << "Drrrrr...." << std::endl;
+		if (rand() % 2)
+			std::cout << executor.getName() << " has been robotomized" << std::endl;
+		else
+			std::cout << executor.getName() << " fail!" << std::endl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:48:05 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:12:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/21 16:23:44 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ class Form
 				virtual const char *what() const throw();
 		};
 		class		GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class		UnsignedForm : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
