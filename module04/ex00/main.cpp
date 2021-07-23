@@ -6,13 +6,15 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:28:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/23 18:14:52 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -28,4 +30,12 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+
+	std::cout << "\nWrong Animal Test\n";
+	const WrongAnimal* testAnimal = new WrongAnimal();
+	const WrongAnimal* testCat = new WrongCat();
+	testAnimal->makeSound();
+	testCat->makeSound();
+	delete testAnimal;
+	delete testCat;
 }

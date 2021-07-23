@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 17:56:44 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:56:45 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 18:12:19 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 18:13:16 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongCat.hpp"
 
-Animal::Animal() { type = "none"; }
+WrongCat::WrongCat() : WrongAnimal("WrongCat") { }
 
-Animal::Animal(std::string _target) { type = _target; }
-
-Animal::Animal( const Animal & src )
+WrongCat::WrongCat( const WrongCat & src ) : WrongAnimal("WrongCat")
 {
 	this->operator=(src);
 }
 
-Animal::~Animal() {}
+WrongCat::~WrongCat() { }
 
-Animal			&Animal::operator=( Animal const & rhs )
+WrongCat		&WrongCat::operator=( WrongCat const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.getType();
-	}
+	WrongAnimal::operator=(rhs);
 	return *this;
 }
 
-std::string		Animal::getType(void) const
+void	WrongCat::makeSound(void) const
 {
-	return (type);
+	std::cout << "Mung 🐶" << std::endl;
 }
-
-void			Animal::makeSound(void) const
-{
-	std::cout << "animal animal" << std::endl;
-}
-

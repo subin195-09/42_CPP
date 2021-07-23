@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongWrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 17:56:44 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:56:45 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 17:56:51 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 18:00:06 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal() { type = "none"; }
+WrongAnimal::WrongAnimal() { type = "none"; }
 
-Animal::Animal(std::string _target) { type = _target; }
+WrongAnimal::WrongAnimal(std::string _target) { type = _target; }
 
-Animal::Animal( const Animal & src )
+WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
 	this->operator=(src);
 }
 
-Animal::~Animal() {}
+WrongAnimal::~WrongAnimal() {}
 
-Animal			&Animal::operator=( Animal const & rhs )
+WrongAnimal			&WrongAnimal::operator=( WrongAnimal const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -32,13 +32,13 @@ Animal			&Animal::operator=( Animal const & rhs )
 	return *this;
 }
 
-std::string		Animal::getType(void) const
+std::string		WrongAnimal::getType(void) const
 {
 	return (type);
 }
 
-void			Animal::makeSound(void) const
+void			WrongAnimal::makeSound(void) const
 {
-	std::cout << "animal animal" << std::endl;
+	std::cout << "Wronganimal Wronganimal" << std::endl;
 }
 
