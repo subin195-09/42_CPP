@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 13:16:12 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 00:36:29 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:07:13 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,26 @@
 class Converter
 {
 	private:
-		std::string			target;
+		std::string const	target;
 		float				targetFloat;
-	public:
 		Converter();
+	public:
+		Converter(std::string _target);
 		Converter( Converter const & src );
 		~Converter();
 		Converter &		operator=( Converter const & rhs );
-		void			checkPossible(std::string &target);
+		void			checkPossible(void);
 		bool			checkInfNan(void);
-		bool			checkChar(std::string target);
+		bool			checkChar(void);
 		void			toChar(void);
 		void			toInt(void);
 		void			toFloat(void);
 		void			toDouble(void);
+		class PossiblceException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 #endif

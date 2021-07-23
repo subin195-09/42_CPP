@@ -2,6 +2,8 @@
 
 Converter::Converter() {}
 
+Converter::Converter(std::string _target) : target(_target) {}
+
 Converter::Converter( const Converter & src )
 {
 	this->operator=(src);
@@ -12,23 +14,32 @@ Converter::~Converter() {}
 Converter	&Converter::operator=( Converter const & rhs )
 {
 	if ( this != &rhs )
+	{
 		this->targetFloat = rhs.targetFloat;
+	}
 	return *this;
 }
 
-void		Converter::checkPossible(std::string &target)
+void		Converter::checkPossible(void)
 {
-	this->target = target;
 	try
 	{
-		// if (checkChar(target))
-		// 	targetFloat = static_cast<float>(target[1]);
+		if (checkChar())
+		{
+			targetFloat = static_cast<float>(target[1]);
+			return ;
+		}
 		targetFloat = std::stof(target);
 	}
 	catch(const std::exception& e)
 	{
-		throw ("cannot convert🤔");
+		throw Converter::PossiblceException();
 	}
+}
+
+const char	*Converter::PossiblceException::what(void) const throw()
+{
+	return ("Error : cannot convert🤔");
 }
 
 bool		Converter::checkInfNan()
@@ -36,12 +47,12 @@ bool		Converter::checkInfNan()
 	if (targetFloat == std::numeric_limits<float>::infinity() || \
 		targetFloat == -std::numeric_limits<float>::infinity() || \
 		isnan(targetFloat))
-		return (false);
-	else
 		return (true);
+	else
+		return (false);
 }
 
-bool		Converter::checkChar(std::string target)
+bool		Converter::checkChar(void)
 {
 	if (target.length() == 3 \
 			&& target[0] == '\'' \
@@ -54,8 +65,11 @@ bool		Converter::checkChar(std::string target)
 void		Converter::toChar()
 {
 	std::cout << "char: ";
-	if (checkChar(target))
+	if (checkChar())
+	{
 		std::cout << target[1] << std::endl;
+		return ;
+	}
 	if (checkInfNan())
 		throw std::string("impossible");
 
@@ -63,7 +77,7 @@ void		Converter::toChar()
 	if (!(32 < targetChar  && targetChar < 127))
 		throw std::string("Non displayable");
 	else
-		std::cout << "'" << targetChar << "'" << std::endl;
+		std::cout << "'" << static_cast<char>(targetChar) << "'" << std::endl;
 }
 
 void		Converter::toInt()

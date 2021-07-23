@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 20:03:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 00:28:01 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/23 14:09:14 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ int main(int ac, char *av[])
 		std::cout << "Error : args" << std::endl;
 		return (1);
 	}
-	std::string	target = av[1];
-	Converter conv;
+	Converter conv(av[1]);
 	try
 	{
-		conv.checkPossible(target);
+		conv.checkPossible();
 	}
-	catch(std::string & s)
+	catch(const std::exception& e)
 	{
-		std::cerr << s << '\n';
+		std::cerr << e.what() << '\n';
 		return (1);
 	}
 
