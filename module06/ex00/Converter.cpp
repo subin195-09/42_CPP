@@ -67,7 +67,7 @@ void		Converter::toChar()
 	std::cout << "char: ";
 	if (checkChar())
 	{
-		std::cout << target[1] << std::endl;
+		std::cout << "\'" << target[1] << "\'" << std::endl;
 		return ;
 	}
 	if (checkInfNan())
