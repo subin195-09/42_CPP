@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:28:56 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 16:19:43 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 17:22:41 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
+# include "Animal.hpp"
+# include <iostream>
+
+class Cat : public Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	private:
+		Brain		*brain;
+	public:
+		Cat();
+		Cat( Cat const & src );
+		~Cat();
+		Cat		&operator=( Cat const & rhs );
+		Brain	*getBrain(void) const;
+		void	makeSound(void) const;
+};
 
-	delete meta;
-	delete j;
-	delete i;
-}
+#endif

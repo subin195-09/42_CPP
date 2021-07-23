@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:28:56 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 16:15:36 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 17:49:20 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main()
+# include "Brain.hpp"
+# include <iostream>
+
+class Animal
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	protected:
+		std::string	type;
+	public:
+		Animal();
+		Animal(std::string _type);
+		Animal( Animal const & src );
+		virtual ~Animal();
+		Animal	&operator=( Animal const & rhs );
+		std::string		getType(void) const;
+		virtual	void	makeSound(void) const;
+};
 
-	delete meta;
-	delete j;
-	delete i;
-}
+#endif

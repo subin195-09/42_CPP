@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:28:56 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 16:24:00 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 16:28:22 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
 #include "Cat.hpp"
 
-int main()
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+Cat::Cat() : Animal("cat") { }
 
-	delete meta;
-	delete j;
-	delete i;
+Cat::Cat( const Cat & src ) : Animal("cat")
+{
+	this->operator=(src);
+}
+
+Cat::~Cat() { }
+
+Cat		&Cat::operator=( Cat const & rhs )
+{
+	Animal::operator=(rhs);
+	return *this;
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Nyaaaa 😺" << std::endl;
 }

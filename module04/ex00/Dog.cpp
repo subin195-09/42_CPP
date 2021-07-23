@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:28:56 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 16:24:05 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 16:28:02 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Dog.hpp"
-#include "Cat.hpp"
 
-int main()
+Dog::Dog() : Animal("Dog") { }
+
+Dog::Dog( const Dog & src ) : Animal("Dog")
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
+	this->operator=(src);
+}
 
-	delete meta;
-	delete j;
-	delete i;
+Dog::~Dog() { }
+
+Dog		&Dog::operator=( Dog const & rhs )
+{
+	Animal::operator=(rhs);
+	return *this;
+}
+
+void	Dog::makeSound(void) const
+{
+	std::cout << "Mung 🐶" << std::endl;
 }

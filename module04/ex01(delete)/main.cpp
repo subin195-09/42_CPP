@@ -5,35 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:52:19 by skim             ###   ########.fr       */
+/*   Created: 2021/07/16 18:58:08 by skim              #+#    #+#             */
+/*   Updated: 2021/07/17 01:54:41 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "AWeapon.hpp"
+#include "Character.hpp"
+#include "Enemy.hpp"
+#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
+#include "RadScorpion.hpp"
+#include "SuperMutant.hpp"
 
 int main()
 {
-	Animal *Animals[10];
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i % 2 == 0)
-			Animals[i] = new Dog();
-		else
-			Animals[i] = new Cat();
-	}
-	for (int i = 0; i < 10; ++i)
-		delete Animals[i];
+	Character* me = new Character("me");
 
-	std::cout << "deep check" << std::endl;
-	Dog test1;
-	Dog test2;
-	test1 = test2;
-	std::cout << test1.getBrain() << std::endl;
-	std::cout << test2.getBrain() << std::endl;
-	std::cout << "deep check fin" << std::endl;
+	std::cout << *me;
 
-	system("leaks a.out");
+	Enemy* b = new RadScorpion();
+
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
+
+	me->equip(pr);
+	std::cout << *me;
+	me->equip(pf);
+	
+	me->attack(b);
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	return 0;
 }
