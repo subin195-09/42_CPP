@@ -1,22 +1,11 @@
 #include "Data.hpp"
 
-Data::Data()
+uintptr_t	serialize(Data *ptr)
 {
+
 }
 
-Data::Data( const Data & src )
+Data		*deserialize(uintptr_t raw)
 {
-}
 
-Data::~Data()
-{
-}
-
-Data &				Data::operator=( Data const & rhs )
-{
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	return *this;
 }

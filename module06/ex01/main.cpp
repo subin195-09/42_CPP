@@ -6,23 +6,13 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:08:52 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:11:22 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/23 18:41:02 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
-uintptr_t	serialize(Data *ptr)
-{
-
-}
-
-Data		*deserialize(uintptr_t raw)
-{
-	
-}
-
 int main(void)
 {
-
+	
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:08:24 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:08:29 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/23 18:41:22 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include <iostream>
 
-class Data
+struct Data
 {
-	private:
-	public:
-		Data();
-		Data( Data const & src );
-		~Data();
-		Data	&operator=( Data const & rhs );
+	std::string	str1;
+	int			int1;
+	std::string	str2;
 };
+
+uintptr_t	serialize(Data *ptr);
+Data		*deserialize(uintptr_t raw);
 
 #endif
