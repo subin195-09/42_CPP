@@ -1,8 +1,17 @@
 #include "Converter.hpp"
 
+size_t		ft_strlen(const char *s)
+{
+	int i = 0;
+
+	while (s[i])
+		i++;
+	return (i);
+}
+
 Converter::Converter() {}
 
-Converter::Converter(std::string _target) : target(_target) {}
+Converter::Converter(char *_target) : target(_target) {}
 
 Converter::Converter( const Converter & src )
 {
@@ -29,7 +38,7 @@ void		Converter::checkPossible(void)
 			targetFloat = static_cast<float>(target[1]);
 			return ;
 		}
-		targetFloat = std::stof(target);
+		targetFloat = std::atof(target);
 	}
 	catch(const std::exception& e)
 	{
@@ -54,7 +63,7 @@ bool		Converter::checkInfNan()
 
 bool		Converter::checkChar(void)
 {
-	if (target.length() == 3 \
+	if (ft_strlen(target) == 3 \
 			&& target[0] == '\'' \
 			&& target[2] == '\'')
 		return (true);

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 13:16:12 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 14:07:13 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/28 15:00:38 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 class Converter
 {
 	private:
-		std::string const	target;
-		float				targetFloat;
+		char const	*target;
+		float		targetFloat;
 		Converter();
 	public:
-		Converter(std::string _target);
+		Converter(char *_target);
 		Converter( Converter const & src );
 		~Converter();
 		Converter &		operator=( Converter const & rhs );

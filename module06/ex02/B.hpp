@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:08:24 by skim              #+#    #+#             */
-/*   Updated: 2021/07/28 18:51:02 by skim             ###   ########.fr       */
+/*   Created: 2021/07/28 16:51:22 by skim              #+#    #+#             */
+/*   Updated: 2021/07/28 18:08:17 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-# define DATA_HPP
+#ifndef B_HPP
+# define B_HPP
 
+# include "Base.hpp"
 # include <iostream>
 
-struct Data
+class B : public Base
 {
-	std::string	data1;
-	int			data2;
-	float		data3;
+	public:
+		virtual ~B() {};
 };
-
-uintptr_t	serialize(Data *ptr);
-Data		*deserialize(uintptr_t raw);
 
 #endif
