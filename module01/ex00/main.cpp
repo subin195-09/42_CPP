@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:35:31 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 19:46:59 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:54:49 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ std::string	randomName(void)
 
 	name += (char)(rand() % 26 + 'A');
 	name += (char)(rand() % 10 + '0');
-	
+
 	return (name);
 }
 
@@ -42,29 +42,25 @@ std::string	setZombieType(void)
 Zombie		*newZombie(std::string name)
 {
 	Zombie	*zombie = new Zombie(name, setZombieType());
-	
+
 	return (zombie);
 }
 
-Zombie	*randomChump(std::string name)
+void		randomChump(std::string name)
 {
 	Zombie *zombie = newZombie(name);
 	zombie->announce();
-	return (zombie);
+	delete zombie;
 }
 
 
-int		main(void)
+int			main(void)
 {
 	srand((unsigned int)time(NULL));
 	Zombie s_zombie = Zombie("stack_zombie", "stack_type");
 	s_zombie.announce();
 
-	Zombie *h_zombie;
 	for(int i = 0; i < 10; i++)
-	{
-		h_zombie = randomChump(randomName());
-		delete h_zombie;
-	}
+		randomChump(randomName());
 	return (0);
 }

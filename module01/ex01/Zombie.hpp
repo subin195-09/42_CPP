@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 16:44:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 16:32:58 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 13:56:44 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@
 #include <iostream>
 
 class Zombie{
-    public:
+    private:
         std::string name;
 		std::string type;
+    public:
         Zombie();
 		Zombie(std::string _name, std::string _type);
         void	announce();
 		~Zombie();
+        void        setName(std::string _name);
+        void        setType(std::string _type);
+        std::string getName(void);
+        std::string getType(void);
 };
 
 Zombie	*zombieHorde(int _size, std::string name);

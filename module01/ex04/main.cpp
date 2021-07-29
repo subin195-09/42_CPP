@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 03:24:59 by skim              #+#    #+#             */
-/*   Updated: 2021/07/09 16:04:53 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:37:54 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ std::string	ft_replace(std::string line, std::string s1, std::string s2)
 	return (line);
 }
 
-// 인자가 들어오도록 바꾸기
 int			main(int ac, char *av[])
 {
 	if (ac != 4 || !av[2] || !av[2][0] || !av[3] || !av[3][0])
@@ -34,6 +33,7 @@ int			main(int ac, char *av[])
 		std::cout << "Error" << std::endl;
 		return (1);
 	}
+
 	std::string		filename = av[1];
 	std::ifstream	fin(filename);
 	if (fin.fail())
@@ -50,7 +50,7 @@ int			main(int ac, char *av[])
 	std::string		line;
 	std::string		s1 = av[2];
 	std::string		s2 = av[3];
-	
+
 	while (!fin.eof())
 	{
 		getline(fin, line);
@@ -59,7 +59,7 @@ int			main(int ac, char *av[])
 		if (!fin.eof())
 			fout << std::endl;
 	}
-	
+
 	fin.close();
 	fout.close();
 }

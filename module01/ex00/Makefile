@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: skim <skim@student.42.fr>                  +#+  +:+       +#+         #
+#    By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/01 15:50:22 by skim              #+#    #+#              #
-#    Updated: 2021/07/07 19:45:04 by skim             ###   ########.fr        #
+#    Updated: 2021/07/29 13:48:55 by skim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ SRCS = main.cpp Zombie.cpp
 
 all : $(NAME)
 
-$(NAME) : 
-	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME) :
+	@$(CC) $(CFLAGS) -std=c++98 $(SRCS) -o $(NAME)
 
 clean :
 	@rm -rf $(NAME)

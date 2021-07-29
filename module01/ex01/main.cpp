@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 19:55:29 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 20:22:09 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:58:07 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,19 @@ std::string	randomName(void)
 
 	name += (char)(rand() % 26 + 'A');
 	name += (char)(rand() % 10 + '0');
-	
+
 	return (name);
 }
 
 int	main(void)
 {
 	Zombie *horde = zombieHorde(42, randomName());
-	
+
+	for(int i = 0; i < 42; i++)
+	{
+		std::cout << i << " : ";
+		horde[i].announce();
+	}
+
 	delete[] horde;
 }

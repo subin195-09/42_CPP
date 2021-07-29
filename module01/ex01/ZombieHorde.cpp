@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 19:50:10 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 20:23:10 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:57:42 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,12 @@ std::string	randomType(void)
 
 Zombie	*zombieHorde(int N, std::string name)
 {
-	Zombie	*horde = new Zombie[42];
-	
+	Zombie	*horde = new Zombie[N];
+
 	for(int i = 0; i < N; i++)
 	{
-		horde[i].name = name;
-		horde[i].type = randomType();
-		std::cout << i << " : ";
-		horde[i].announce();
+		horde[i].setName(name);
+		horde[i].setType(randomType());
 	}
 	return (horde);
 }

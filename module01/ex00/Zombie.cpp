@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:03:07 by skim              #+#    #+#             */
-/*   Updated: 2021/07/04 19:38:23 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:51:30 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+}
 
 Zombie::Zombie(std::string _name, std::string _type)
 {
@@ -20,7 +24,7 @@ Zombie::Zombie(std::string _name, std::string _type)
 
 void    Zombie::announce(void)
 {
-    std::cout << "<" + name + " (" + type + ")> Braiiiiiinnss..." << std::endl;
+    std::cout << "<" + name + " (" + type + ")> BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::~Zombie()

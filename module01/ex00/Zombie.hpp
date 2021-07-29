@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 16:44:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 16:32:53 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:50:47 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Zombie{
         std::string name;
 		std::string type;
     public:
+        Zombie();
 		Zombie(std::string _name, std::string _type);
         void	announce();
 		~Zombie();

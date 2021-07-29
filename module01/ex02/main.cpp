@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:28:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/07 20:49:46 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:12:23 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,10 @@ int		main(void)
 
 	std::cout << "pointer : " << *stringPTR << std::endl;
 	std::cout << "reference : " << stringREF << std::endl;
+
+	std::cout << &str << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+
 	return (0);
 }

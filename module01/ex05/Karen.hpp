@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:32:03 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 16:34:54 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:31:57 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class	Karen{
 		void	warning(void);
 		void	error(void);
 	public:
+		int		return_index(std::string level);
 		void	complain(std::string level);
 };
 

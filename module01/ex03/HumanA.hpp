@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skim <skim@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:58:12 by skim              #+#    #+#             */
-/*   Updated: 2021/07/08 16:33:07 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:13:53 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class	HumanA {
 	private:
 		std::string		name;
-		Weapon	&weapon;
+		Weapon			&weapon;
 	public:
 		HumanA(std::string _name, Weapon &_weapon);
 		void	attack();

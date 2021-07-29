@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:46:10 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:56:10 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 14:31:45 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	Karen::error(void)
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-int		return_index(std::string level)
+int		Karen::return_index(std::string level)
 {
 	std::string levelList[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int			i;
