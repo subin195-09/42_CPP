@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/04 17:35:31 by skim              #+#    #+#             */
-/*   Updated: 2021/07/29 14:54:49 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 16:44:49 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int			main(void)
 
 	for(int i = 0; i < 10; i++)
 		randomChump(randomName());
+	system("leaks zombie");
 	return (0);
 }

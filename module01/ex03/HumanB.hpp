@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:59:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/29 14:13:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/30 13:39:47 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB {
 		Weapon			*weapon;
 	public:
 		HumanB(std::string _name);
-		void	setWeapon(Weapon weapon);
+		void	setWeapon(Weapon &weapon);
 		void	attack();
 };
 

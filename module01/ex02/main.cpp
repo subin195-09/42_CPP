@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 20:28:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/29 14:12:23 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/29 16:49:10 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(void)
 	std::cout << "reference : " << stringREF << std::endl;
 
 	std::cout << &str << std::endl;
-	std::cout << stringPTR << std::endl;
+	std::cout << &stringPTR << std::endl;
 	std::cout << &stringREF << std::endl;
 
 	return (0);
