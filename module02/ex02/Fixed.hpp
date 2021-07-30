@@ -29,10 +29,10 @@ class Fixed
 		bool	operator==( Fixed const & f );
 		bool	operator!=( Fixed const & f );
 
-		Fixed &	operator+( Fixed const & f );
-		Fixed &	operator-( Fixed const & f );
-		Fixed &	operator*( Fixed const & f );
-		Fixed &	operator/( Fixed const & f );
+		Fixed	operator+( Fixed const & f );
+		Fixed	operator-( Fixed const & f );
+		Fixed	operator*( Fixed const & f );
+		Fixed	operator/( Fixed const & f );
 
 		Fixed &	operator++( void ); // prefix
 		Fixed	operator++( int ); // postfix

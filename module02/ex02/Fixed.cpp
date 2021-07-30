@@ -99,28 +99,32 @@ bool	Fixed::operator!=( Fixed const & f )
 		return false;
 }
 
-Fixed &	Fixed::operator+( Fixed const & f )
+Fixed	Fixed::operator+( Fixed const & f )
 {
-	this->value += f.value;
-	return (*this);
+	Fixed ret;
+	ret.value = this->value + f.value;
+	return (ret);
 }
 
-Fixed &	Fixed::operator-( Fixed const & f )
+Fixed	Fixed::operator-( Fixed const & f )
 {
-	this->value -= f.value;
-	return (*this);
+	Fixed ret;
+	ret.value = this->value - f.value;
+	return (ret);
 }
 
-Fixed &	Fixed::operator*( Fixed const & f )
+Fixed	Fixed::operator*( Fixed const & f )
 {
-	this->value = this->value * f.value / (1 << fractionNumber);
-	return (*this);
+	Fixed ret;
+	ret.value = (this->value * f.value) / (1 << fractionNumber);
+	return (ret);
 }
 
-Fixed &	Fixed::operator/( Fixed const & f )
+Fixed	Fixed::operator/( Fixed const & f )
 {
-	this->value = this->value / f.value * (1 << fractionNumber);
-	return (*this);
+	Fixed ret;
+	ret.value = (this->value / f.value) * (1 << fractionNumber);
+	return (ret);
 }
 
 Fixed &	Fixed::operator++( void )
@@ -183,6 +187,6 @@ Fixed		&Fixed::min( Fixed &f1, Fixed &f2 )
 
 std::ostream &operator<<( std::ostream &os, Fixed const & rhs )
 {
-	std::cout << rhs.toFloat();
+	os << rhs.toFloat();
 	return (os);
 }
