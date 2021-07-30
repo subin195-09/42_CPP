@@ -52,7 +52,7 @@ Fixed 	&Fixed::operator=( Fixed const &rhs )
 
 std::ostream &operator<<( std::ostream &os, Fixed const & rhs )
 {
-	std::cout << rhs.toFloat();
+	os << rhs.toFloat();
 	return (os);
 }
 
