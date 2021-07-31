@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:51:47 by skim              #+#    #+#             */
-/*   Updated: 2021/07/31 16:50:12 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/31 20:32:53 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Base	*generate(void)
 		return (new C);
 }
 
-void	identifyPointer(Base *p)
+void	identify(Base *p)
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "A Type" << std::endl;
@@ -39,7 +39,7 @@ void	identifyPointer(Base *p)
 		std::cout << "None Type" << std::endl;
 }
 
-void	identifyReference(Base &p)
+void	identify(Base &p)
 {
 	try
 	{
@@ -81,18 +81,18 @@ int main(void)
 	Base *testC = new C;
 	Base *test = generate();
 
-	identifyPointer(testBase);
-	identifyPointer(testA);
-	identifyPointer(testB);
-	identifyPointer(testC);
-	identifyPointer(test);
+	identify(testBase);
+	identify(testA);
+	identify(testB);
+	identify(testC);
+	identify(test);
 	std::cout << std::endl;
 
-	identifyReference(*testBase);
-	identifyReference(*testA);
-	identifyReference(*testB);
-	identifyReference(*testC);
-	identifyReference(*test);
+	identify(*testBase);
+	identify(*testA);
+	identify(*testB);
+	identify(*testC);
+	identify(*test);
 
 	delete testBase;
 	delete testA;
