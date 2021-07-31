@@ -6,14 +6,14 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 20:22:41 by skim              #+#    #+#             */
-/*   Updated: 2021/07/30 23:24:18 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/31 16:12:18 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a(100);
+	Fixed a(1);
 	Fixed const b(Fixed(5.05f) * Fixed(2));
 	Fixed c(1.0f);
 
