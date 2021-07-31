@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:51:47 by skim              #+#    #+#             */
-/*   Updated: 2021/07/30 19:42:46 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/31 16:50:12 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,36 +41,60 @@ void	identifyPointer(Base *p)
 
 void	identifyReference(Base &p)
 {
-	if (dynamic_cast<A *>(&p))
+	try
+	{
+		Base &test = dynamic_cast<A &>(p);
 		std::cout << "A Type" << std::endl;
-	else if (dynamic_cast<B *>(&p))
+		return ;
+		(void)test;
+	}
+	catch(const std::exception& e) {}
+
+	try
+	{
+		Base &test = dynamic_cast<B &>(p);
 		std::cout << "B Type" << std::endl;
-	else if (dynamic_cast<C *>(&p))
+		return ;
+		(void)test;
+	}
+	catch(const std::exception& e) {}
+
+	try
+	{
+		Base &test = dynamic_cast<C &>(p);
 		std::cout << "C Type" << std::endl;
-	else
-		std::cout << "None Type" << std::endl;
+		return ;
+		(void)test;
+	}
+	catch(const std::exception& e) {}
+
+	std::cout << "None Type" << std::endl;
 }
 
 int main(void)
 {
 	srand(time(NULL));
 
+	Base *testBase = new Base;
 	Base *testA = new A;
 	Base *testB = new B;
 	Base *testC = new C;
 	Base *test = generate();
 
+	identifyPointer(testBase);
 	identifyPointer(testA);
 	identifyPointer(testB);
 	identifyPointer(testC);
 	identifyPointer(test);
 	std::cout << std::endl;
 
+	identifyReference(*testBase);
 	identifyReference(*testA);
 	identifyReference(*testB);
 	identifyReference(*testC);
 	identifyReference(*test);
 
+	delete testBase;
 	delete testA;
 	delete testB;
 	delete testC;
