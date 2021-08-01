@@ -6,11 +6,11 @@
 #    By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/31 20:46:11 by skim              #+#    #+#              #
-#    Updated: 2021/07/31 20:47:28 by skim             ###   ########.fr        #
+#    Updated: 2021/08/01 19:08:45 by skim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = iter
+NAME = array
 
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra
