@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:37:49 by skim              #+#    #+#             */
-/*   Updated: 2021/07/16 17:08:36 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/01 17:57:21 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,29 @@ DiamondTrap	&DiamondTrap::operator=( DiamondTrap const & rhs )
 	return (*this);
 }
 
-void		DiamondTrap::attack(std::string const &target)
+void	DiamondTrap::attack(std::string const &target)
 {
 	ScavTrap::attack(target);
 }
 
+void	DiamondTrap::takeDamage(unsigned int amount)
+{
+	std::cout << "DiamondTrap : ";
+	std::cout << "<" + this->Name + "> takes damage ";
+	std::cout << amount << std::endl;
+	HitPoints -= amount;
+}
+
+void	DiamondTrap::beRepaired(unsigned int amount)
+{
+	std::cout << "DiamondTrap : ";
+	std::cout << "<" + this->Name + "> is repaired ";
+	std::cout << amount << std::endl;
+	EnergyPoint += amount;
+}
 
 void		DiamondTrap::whoAmI(void)
 {
-	std::cout << "I'm " << this->Name << std::endl;
+	std::cout << "Diamond Name: I'm " << this->Name << std::endl;
+	std::cout << "ClapTrap Name: I'm " << ClapTrap::getName() << std::endl;
 }

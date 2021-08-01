@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:05:51 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 16:44:07 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/01 17:48:51 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ ClapTrap::ClapTrap( const ClapTrap & src )
 {
 	std::cout << "make ClapTrap" << std::endl;
 	this->operator=(src);
-	HitPoints = src.HitPoints;
-	EnergyPoint = src.EnergyPoint;
-	AttackDamage = src.AttackDamage;
 }
 
 ClapTrap::ClapTrap( std::string _Name )

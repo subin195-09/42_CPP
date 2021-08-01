@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 17:02:19 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 18:18:51 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/01 17:44:03 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class FragTrap: public virtual ClapTrap
+class FragTrap: virtual public ClapTrap
 {
-
 	public:
-
 		FragTrap();
 		FragTrap( FragTrap const & src );
 		FragTrap ( std::string _Name );
 		~FragTrap();
 		FragTrap &		operator=( FragTrap const & rhs );
-		void	highFivesGuys(void);
 
+		virtual void	attack(std::string const &target);
+		virtual void	takeDamage(unsigned int amount);
+		virtual void	beRepaired(unsigned int amount);
+
+		void	highFivesGuys(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:05:51 by skim              #+#    #+#             */
-/*   Updated: 2021/07/14 16:44:07 by skim             ###   ########.fr       */
+/*   Updated: 2021/07/16 16:23:01 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap Destroy" << std::endl;
 }
 
-ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
+ClapTrap		&ClapTrap::operator=( ClapTrap const & rhs )
 {
 	if ( this != &rhs )
 	{
@@ -55,20 +55,20 @@ ClapTrap &				ClapTrap::operator=( ClapTrap const & rhs )
 	return *this;
 }
 
-void		ClapTrap::attack(std::string const &target)
+void			ClapTrap::attack(std::string const &target)
 {
 	std::cout << "<" + this->Name + "> attacks <" + target + ">";
 	std::cout << " ,causing <" << this->AttackDamage << "> points of damage!" << std::endl;
 }
 
-void		ClapTrap::takeDamage(unsigned int amount)
+void			ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "<" + this->Name + "> takes damage ";
 	std::cout << amount << std::endl;
 	HitPoints -= amount;
 }
 
-void		ClapTrap::beRepaired(unsigned int amount)
+void			ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "<" + this->Name + "> is repaired ";
 	std::cout << amount << std::endl;

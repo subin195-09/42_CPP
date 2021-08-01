@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 15:30:03 by skim              #+#    #+#             */
-/*   Updated: 2021/07/16 17:05:30 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/01 17:24:52 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "make ScavTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap( std::string _Name ) : ClapTrap(_Name)
 {
 	std::cout << "make ScavTrap" << std::endl;
-	setHitPoints(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->HitPoints = 100;
+	this->EnergyPoint = 50;
+	this->AttackDamage = 20;
 }
 
 ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src)
@@ -39,16 +39,34 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap Destroy" << std::endl;
 }
 
-void		ScavTrap::attack(std::string const &target)
-{
-	std::cout << "ScavTrap : <" + this->Name + "> attacks <" + target + ">";
-	std::cout << " ,causing <" << this->AttackDamage << "> points of damage!" << std::endl;
-}
 
 ScavTrap	&ScavTrap::operator=( ScavTrap const & rhs )
 {
 	ClapTrap::operator=(rhs);
 	return (*this);
+}
+
+void	ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap : ";
+	std::cout << "<" + this->Name + "> attacks <" + target + ">";
+	std::cout << " ,causing <" << this->AttackDamage << "> points of damage!" << std::endl;
+}
+
+void	ScavTrap::takeDamage(unsigned int amount)
+{
+	std::cout << "ScavTrap : ";
+	std::cout << "<" + this->Name + "> takes damage ";
+	std::cout << amount << std::endl;
+	HitPoints -= amount;
+}
+
+void	ScavTrap::beRepaired(unsigned int amount)
+{
+	std::cout << "ScavTrap : ";
+	std::cout << "<" + this->Name + "> is repaired ";
+	std::cout << amount << std::endl;
+	EnergyPoint += amount;
 }
 
 void		ScavTrap::guardGate( void )

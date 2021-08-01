@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:10:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/16 17:21:10 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/01 17:52:42 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,22 @@
 
 int		main(void)
 {
-	DiamondTrap DT1("DT1");
-	DiamondTrap DT2("DT2");
+	DiamondTrap dt1("dt1");
+	DiamondTrap dt2("dt2");
 
-	DT1.whoAmI();
-	DT2.whoAmI();
-	DT1.attack(DT2.getName());
-	DT2.takeDamage(DT1.getAttackDamage());
-	DT1.takeDamage(10);
-	DT1.beRepaired(10);
+	std::cout << std::endl << dt1;
+	std::cout << std::endl << dt2 << std::endl;
+
+	dt1.attack(dt2.getName());
+	dt2.takeDamage(dt1.getAttackDamage());
+	dt1.takeDamage(10);
+	dt1.beRepaired(10);
+
+	std::cout << std::endl;
+	dt1.whoAmI();
+	dt1.guardGate();
+	dt1.highFivesGuys();
+
+	std::cout << std::endl << dt1;
+	std::cout << std::endl << dt2;
 }
