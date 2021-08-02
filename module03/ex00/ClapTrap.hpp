@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:00:50 by skim              #+#    #+#             */
-/*   Updated: 2021/08/01 17:49:21 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/02 17:38:11 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ class ClapTrap {
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 
-		std::string		getName() const;
-		unsigned int	getHitPoints() const;
-		unsigned int	getEnergyPoint() const;
-		unsigned int	getAttackDamage() const;
+		std::string	const	&getName() const; // ㅁㅔ모리의 효율성
+		unsigned int		getHitPoints() const;
+		unsigned int		getEnergyPoint() const;
+		unsigned int		getAttackDamage() const;
+
 		void			setName( std::string _Name );
 		void			setHitPoints( unsigned int _HitPoints );
 		void			setEnergyPoint( unsigned int _EnergyPoint );

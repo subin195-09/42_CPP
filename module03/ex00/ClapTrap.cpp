@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 14:05:51 by skim              #+#    #+#             */
-/*   Updated: 2021/08/01 17:48:51 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/02 17:38:33 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	EnergyPoint += amount;
 }
 
-std::string		ClapTrap::getName() const
+std::string	const & ClapTrap::getName() const
 {
 	return Name;
 }
