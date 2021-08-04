@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:15:36 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:49:20 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:13:18 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Animal
 		Animal( Animal const & src );
 		virtual ~Animal();
 		Animal	&operator=( Animal const & rhs );
-		std::string		getType(void) const;
-		virtual	void	makeSound(void) const;
+		std::string	const	&getType(void) const;
+		virtual	void		makeSound(void) const;
 };
 
 #endif

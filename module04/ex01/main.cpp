@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:52:19 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:47:58 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main()
 {
+	srand((unsigned int)time(NULL));
 	Animal *Animals[10];
 	for (int i = 0; i < 10; ++i)
 	{
@@ -27,13 +28,22 @@ int main()
 	for (int i = 0; i < 10; ++i)
 		delete Animals[i];
 
-	std::cout << "deep check" << std::endl;
+	std::cout << "🌈deep check🌈" << std::endl;
 	Dog test1;
 	Dog test2;
+	std::cout << test1.getBrain() << std::endl;
+	std::cout << test2.getBrain() << std::endl;
 	test1 = test2;
 	std::cout << test1.getBrain() << std::endl;
 	std::cout << test2.getBrain() << std::endl;
 	std::cout << "deep check fin" << std::endl;
 
+	std::cout << "🌈deep check🌈" << std::endl;
+	Dog basic;
+	Dog tmp = basic;
+
+	std::cout << basic.getBrain() << std::endl;
+	std::cout << tmp.getBrain() << std::endl;
 	system("leaks a.out");
 }
+

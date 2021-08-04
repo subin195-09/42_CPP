@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:19:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:22:41 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:13:43 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public Animal
 		~Cat();
 		Cat		&operator=( Cat const & rhs );
 		Brain	*getBrain(void) const;
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif

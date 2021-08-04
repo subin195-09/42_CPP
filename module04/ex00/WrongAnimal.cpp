@@ -12,16 +12,28 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() { type = "none"; }
+WrongAnimal::WrongAnimal()
+{
+	std::cout << "WrongAnimal constructor" << std::endl;
+	type = "none";
+}
 
-WrongAnimal::WrongAnimal(std::string _target) { type = _target; }
+WrongAnimal::WrongAnimal(std::string _target)
+{
+	std::cout << "WrongAnimal constructor" << std::endl;
+	type = _target;
+}
 
 WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
+	std::cout << "WrongAnimal constructor" << std::endl;
 	this->operator=(src);
 }
 
-WrongAnimal::~WrongAnimal() {}
+WrongAnimal::~WrongAnimal()
+{
+	std::cout << "WrongAnimal destructor" << std::endl;
+}
 
 WrongAnimal			&WrongAnimal::operator=( WrongAnimal const & rhs )
 {

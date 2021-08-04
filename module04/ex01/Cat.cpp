@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:00 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:26:50 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:35:02 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 Cat::Cat() : Animal("cat")
 {
+	std::cout << "cat constructor" << std::endl;
 	this->brain = new Brain();
 }
 
 Cat::Cat( const Cat & src ) : Animal("cat")
 {
+	std::cout << "cat constructor" << std::endl;
 	this->brain = new Brain(*src.getBrain());
 }
 
 Cat::~Cat()
 {
+	std::cout << "cat destructor" << std::endl;
 	delete this->brain;
 }
 

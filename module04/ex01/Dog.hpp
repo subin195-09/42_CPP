@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:23:51 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 17:27:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:14:25 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
-# include "Brain.hpp"
 # include <iostream>
 
 class Dog : public Animal
@@ -26,8 +25,8 @@ class Dog : public Animal
 		Dog( Dog const & src );
 		~Dog();
 		Dog		&operator=( Dog const & rhs );
-		void	makeSound(void) const;
 		Brain	*getBrain(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif

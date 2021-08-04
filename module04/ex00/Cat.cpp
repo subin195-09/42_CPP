@@ -6,20 +6,27 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:00 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 16:28:22 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 17:02:47 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("cat") { }
-
-Cat::Cat( const Cat & src ) : Animal("cat")
+Cat::Cat() : Animal("Cat")
 {
+	std::cout << "cat constructor" << std::endl;
+}
+
+Cat::Cat( const Cat & src ) : Animal("Cat")
+{
+	std::cout << "cat constructor" << std::endl;
 	this->operator=(src);
 }
 
-Cat::~Cat() { }
+Cat::~Cat()
+{
+	std::cout << "cat destructor" << std::endl;
+}
 
 Cat		&Cat::operator=( Cat const & rhs )
 {
