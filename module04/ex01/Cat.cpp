@@ -6,19 +6,19 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:00 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 17:35:02 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 18:17:04 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("cat")
+Cat::Cat() : Animal("Cat")
 {
 	std::cout << "cat constructor" << std::endl;
 	this->brain = new Brain();
 }
 
-Cat::Cat( const Cat & src ) : Animal("cat")
+Cat::Cat( const Cat & src ) : Animal("Cat")
 {
 	std::cout << "cat constructor" << std::endl;
 	this->brain = new Brain(*src.getBrain());

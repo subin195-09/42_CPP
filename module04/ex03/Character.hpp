@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:36:13 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 20:56:35 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 18:35:50 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Character : public ICharacter
 		std::string	name;
 		AMateria	*invent[4];
 		int			count;
-	public:
 		Character();
-		Character( std::string _name);
+	public:
+		Character( std::string _name );
 		Character( Character const & src );
 		virtual ~Character();
 		Character			&operator=( Character const & rhs );

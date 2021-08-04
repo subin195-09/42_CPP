@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 17:56:08 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 20:58:55 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 18:29:14 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define AMATERIA_HPP
 
 # include "ICharacter.hpp"
-# include "AMateria.hpp"
 # include <iostream>
 # include <string>
 
@@ -34,7 +33,7 @@ class AMateria
 		std::string const	&getType() const;
 		unsigned int		getXP() const;
 		virtual	AMateria	*clone() const = 0;
-		virtual void		use(ICharacter &target) = 0;
+		virtual void		use(ICharacter &target);
 };
 
 std::ostream &			operator<<( std::ostream & o, AMateria const & i );

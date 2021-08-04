@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 16:19:43 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 17:13:43 by skim             ###   ########.fr       */
+/*   Created: 2021/07/23 16:37:04 by skim              #+#    #+#             */
+/*   Updated: 2021/07/23 16:52:31 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
 # include <iostream>
 
-class Cat : public Animal
+class Brain
 {
 	private:
-		Brain		*brain;
+		std::string	ideas[100];
 	public:
-		Cat();
-		Cat( Cat const & src );
-		~Cat();
-		Cat		&operator=( Cat const & rhs );
-		Brain	*getBrain(void) const;
-		virtual void	makeSound(void) const;
+		Brain();
+		Brain( Brain const & src );
+		~Brain();
+		Brain	&operator=( Brain const & rhs );
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:39:42 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 21:14:56 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 18:45:42 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void				Character::equip(AMateria *m)
 
 void				Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= 4)
+	if (idx < 0 || idx >= 4 || !invent[idx])
 		return ;
 	invent[idx] = 0;
 	for (int i = idx + 1; i < 4; i++)
@@ -80,7 +80,7 @@ void				Character::unequip(int idx)
 
 void				Character::use(int idx, ICharacter &target)
 {
-	if (idx > count || idx < 0)
+	if (idx > count || idx < 0 || !invent[idx])
 		return ;
 	invent[idx]->use(target);
 }

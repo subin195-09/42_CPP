@@ -6,13 +6,14 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:15:36 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 18:32:17 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 18:15:29 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
+# include "Brain.hpp"
 # include <iostream>
 
 class Animal
@@ -25,8 +26,8 @@ class Animal
 		Animal( Animal const & src );
 		virtual ~Animal();
 		Animal	&operator=( Animal const & rhs );
-		std::string		getType(void) const;
-		virtual	void	makeSound(void) const = 0;
+		std::string	const	&getType(void) const;
+		virtual	void		makeSound(void) const = 0;
 };
 
 #endif

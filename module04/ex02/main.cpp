@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 18:33:13 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/04 18:19:59 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType()<< std::endl;
+	std::cout << i->getType()<< std::endl;
 
 	i->makeSound();
 	j->makeSound();
