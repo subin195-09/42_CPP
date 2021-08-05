@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 17:52:35 by skim              #+#    #+#             */
-/*   Updated: 2021/08/05 16:18:15 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 18:39:48 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int main()
 	delete me;
 	delete src;
 
-	// system("leaks a.out");
+	system("leaks a.out");
 	return 0;
 }

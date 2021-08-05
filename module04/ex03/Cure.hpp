@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:22:56 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 18:25:26 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 18:29:42 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Cure : public AMateria
 		Cure( Cure const & src );
 		~Cure();
 		Cure		&operator=( Cure const & rhs );
+		
 		AMateria	*clone() const;
 		void		use(ICharacter& target);
 };

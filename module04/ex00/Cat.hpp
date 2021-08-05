@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:19:43 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 17:04:08 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 18:06:49 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Cat : public Animal
 		Cat( Cat const & src );
 		~Cat();
 		Cat		&operator=( Cat const & rhs );
+		
 		virtual void	makeSound(void) const;
 };
 
