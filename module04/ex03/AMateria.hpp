@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 17:56:08 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 18:29:14 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:52:26 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,5 @@ class AMateria
 		virtual	AMateria	*clone() const = 0;
 		virtual void		use(ICharacter &target);
 };
-
-std::ostream &			operator<<( std::ostream & o, AMateria const & i );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:36:13 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 18:35:50 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:56:12 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Character : public ICharacter
 		Character( Character const & src );
 		virtual ~Character();
 		Character			&operator=( Character const & rhs );
+
 		std::string	const & getName() const;
 		void				equip(AMateria* m);
 		void				unequip(int idx);

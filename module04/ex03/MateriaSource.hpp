@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 19:41:03 by skim              #+#    #+#             */
-/*   Updated: 2021/07/17 20:56:43 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 16:02:49 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource( MateriaSource const & src );
 		virtual ~MateriaSource();
 		MateriaSource	&operator=( MateriaSource const & rhs );
+
 		void			learnMateria(AMateria *am);
 		AMateria		*createMateria(std::string const & type);
 };

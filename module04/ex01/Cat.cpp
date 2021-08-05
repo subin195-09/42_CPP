@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:00 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 18:17:04 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:40:16 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Cat		&Cat::operator=( Cat const & rhs )
 {
 	if (this != &rhs)
 	{
+		this->Animal::operator=(rhs);
 		Brain *copyBrain = new Brain(*rhs.getBrain());
 		delete this->brain;
 		this->brain = copyBrain;

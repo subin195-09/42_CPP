@@ -44,7 +44,7 @@ WrongAnimal			&WrongAnimal::operator=( WrongAnimal const & rhs )
 	return *this;
 }
 
-std::string		WrongAnimal::getType(void) const
+std::string const	&WrongAnimal::getType(void) const
 {
 	return (type);
 }

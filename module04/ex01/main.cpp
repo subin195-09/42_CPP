@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:24:45 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 17:47:58 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:48:22 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,25 @@ int main()
 	for (int i = 0; i < 10; ++i)
 		delete Animals[i];
 
+	std::cout << std::endl;
 	std::cout << "🌈deep check🌈" << std::endl;
 	Dog test1;
 	Dog test2;
 	std::cout << test1.getBrain() << std::endl;
 	std::cout << test2.getBrain() << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << test1.getBrain()->getIdeas(i) << " = ";
+		std::cout << test2.getBrain()->getIdeas(i) << std::endl;
+	}
 	test1 = test2;
 	std::cout << test1.getBrain() << std::endl;
 	std::cout << test2.getBrain() << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << test1.getBrain()->getIdeas(i) << " = ";
+		std::cout << test2.getBrain()->getIdeas(i) << std::endl;
+	}
 	std::cout << "deep check fin" << std::endl;
 
 	std::cout << "🌈deep check🌈" << std::endl;
@@ -44,6 +55,11 @@ int main()
 
 	std::cout << basic.getBrain() << std::endl;
 	std::cout << tmp.getBrain() << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		std::cout << test1.getBrain()->getIdeas(i) << " = ";
+		std::cout << test2.getBrain()->getIdeas(i) << std::endl;
+	}
 	system("leaks a.out");
 }
 

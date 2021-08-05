@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:00:50 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 18:54:25 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:54:30 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ unsigned int		AMateria::getXP() const
 void				AMateria::use(ICharacter &target)
 {
 	xp += 10;
-	(void)target;
+	std::cout << "AMateria : " << target.getName() << " use " << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 17:14:41 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 17:14:42 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:45:50 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,9 @@ Brain	&Brain::operator=( Brain const & rhs )
 			this->ideas[i] = rhs.ideas[i];
 	}
 	return *this;
+}
+
+std::string const	&Brain::getIdeas( size_t index ) const
+{
+	return (ideas[index]);
 }

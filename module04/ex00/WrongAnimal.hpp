@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 18:00:42 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 18:01:28 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 15:34:23 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class WrongAnimal
 		WrongAnimal( WrongAnimal const & src );
 		virtual ~WrongAnimal();
 		WrongAnimal	&operator=( WrongAnimal const & rhs );
-		std::string		getType(void) const;
-		void			makeSound(void) const;
+		std::string const	&getType(void) const;
+		void				makeSound(void) const;
 };
 
 #endif

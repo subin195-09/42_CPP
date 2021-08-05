@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 18:39:42 by skim              #+#    #+#             */
-/*   Updated: 2021/08/04 18:45:42 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/05 16:01:36 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ Character			&Character::operator=( Character const & rhs )
 	if ( this != &rhs )
 	{
 		this->name = rhs.getName();
+		for (int i = 0; i < count; i++)
+			delete this->invent[i];
 		this->count = 0;
 		for (int i = 0; i < rhs.count; i++)
 			this->invent[i] = rhs.invent[i]->clone();
@@ -80,7 +82,7 @@ void				Character::unequip(int idx)
 
 void				Character::use(int idx, ICharacter &target)
 {
-	if (idx > count || idx < 0 || !invent[idx])
+	if (idx >= count || idx < 0 || !invent[idx])
 		return ;
 	invent[idx]->use(target);
 }
