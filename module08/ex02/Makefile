@@ -6,7 +6,7 @@
 #    By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/08 19:04:40 by skim              #+#    #+#              #
-#    Updated: 2021/08/08 19:25:20 by skim             ###   ########.fr        #
+#    Updated: 2021/08/08 20:44:24 by skim             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = a.out
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS =  main.cpp span.cpp
+SRCS =  main.cpp mutantstack.cpp
 
 all : $(NAME)
 
