@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 20:40:29 by skim              #+#    #+#             */
-/*   Updated: 2021/08/11 19:04:47 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/11 19:33:21 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,18 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
+
+	std::cout << std::endl;
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int>::reverse_iterator rite = mstack.rend();
+	++rit;
+	--rit;
+	while (rit != rite)
+	{
+		std::cout << *rit << std::endl;
+		++rit;
+	}
+
 	std::stack<int> s(mstack);
 	return (0);
 }
