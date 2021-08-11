@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 19:41:39 by skim              #+#    #+#             */
-/*   Updated: 2021/08/08 20:38:14 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/11 17:02:31 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		Span::addNumber( int number )
 
 void		Span::addNumber( std::vector<int>::iterator begin, std::vector<int>::iterator end )
 {
-	if (end - begin > N)
+	if (data.size() + end - begin > N)
 		throw FullNumber();
 	std::vector<int>::iterator it = begin;
 	for (; it != end; ++it)
@@ -53,11 +53,12 @@ long		Span::shortestSpan()
 {
 	if (data.size() <= 1)
 		throw NotEnoughNumber();
+	sort(data.begin(), data.end());
 	std::vector<int>::iterator it = data.begin();
-	long min = abs(*(it + 1) - *it);
+	long min = *(it + 1) - *it;
 	for (; it != data.end() - 1; ++it)
 	{
-		if (labs(*(it + 1) - *it) < min)
+		if (*(it + 1) - *it < min)
 			min = *(it + 1) - *it;
 	}
 	return (min);
@@ -67,10 +68,9 @@ long		Span::longestSpan()
 {
 	if (data.size() <= 1)
 		throw NotEnoughNumber();
-	sort(data.begin(), data.end());
-	return (data[data.size() - 1] - data[0]);
+	int ret = *(max_element(data.begin(), data.end())) - *(min_element(data.begin(), data.end()));
+	return (ret);
 }
-
 
 const char	*Span::FullNumber::what(void) const throw()
 {

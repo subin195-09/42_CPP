@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 19:25:23 by skim              #+#    #+#             */
-/*   Updated: 2021/08/08 20:39:06 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/11 16:59:00 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 
-	Span sp2 = Span(1000);
-	std::vector<int> range(1000);
+	Span sp2 = Span(10000);
+	std::vector<int> range(10000);
 	range[200] = 100;
 	sp2.addNumber(range.begin(), range.end());
 	std::cout << sp2.shortestSpan() << std::endl;
