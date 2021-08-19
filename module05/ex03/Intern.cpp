@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 17:40:14 by skim              #+#    #+#             */
-/*   Updated: 2021/08/19 17:07:47 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 17:25:07 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ Form	*Intern::makeForm(std::string form_type, std::string form_name)
 		new RobotomyRequestForm(form_name),
 		new PresidentialPardonForm(form_name)
 	};
+
 	int i = -1;
 	while (++i < 3)
 	{
@@ -54,6 +55,7 @@ Form	*Intern::makeForm(std::string form_type, std::string form_name)
 		if (i != j)
 			delete forms[j];
 	}
+	
 	if (i == 3)
 		throw Unknown();
 	else
