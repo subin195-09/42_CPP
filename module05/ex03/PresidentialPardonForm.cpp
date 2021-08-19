@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:11:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:23:59 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:44:43 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=( PresidentialPardonFor
 	return (*this);
 }
 
-void					PresidentialPardonForm::execute(Bureaucrat const &executor)
+void					PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (sign == false)
 		throw Form::UnsignedForm();

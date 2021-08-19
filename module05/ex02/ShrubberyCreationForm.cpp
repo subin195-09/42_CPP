@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:57:28 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:24:14 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:39:52 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ const char* ShrubberyCreationForm::FileOpenException::what() const throw()
 	return ("Shrubberry : File Open Error");
 }
 
-void					ShrubberyCreationForm::execute(Bureaucrat const &executor)
+void					ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	if (sign == false)
 		throw Form::UnsignedForm();

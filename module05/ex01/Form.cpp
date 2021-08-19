@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 14:05:27 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:02:16 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:19:15 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,22 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 	return o;
 }
 
-std::string	Form::getName(void) const
+std::string	const	&Form::getName(void) const
 {
 	return (name);
 }
 
-bool		Form::getSign(void) const
+bool				Form::getSign(void) const
 {
 	return (sign);
 }
 
-int			Form::getSignGrade(void) const
+int					Form::getSignGrade(void) const
 {
 	return (signGrade);
 }
 
-int			Form::getExeGrade(void) const
+int					Form::getExeGrade(void) const
 {
 	return (exeGrade);
 }

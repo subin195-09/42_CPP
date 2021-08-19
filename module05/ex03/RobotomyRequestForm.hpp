@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:09:22 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 15:56:54 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 17:16:11 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm(std::string _target);
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		~RobotomyRequestForm();
+
 		RobotomyRequestForm	&operator=( RobotomyRequestForm const & rhs );
-		void	execute(Bureaucrat const &executor);
+		void	execute(Bureaucrat const &executor) const;
 };
 
 #endif

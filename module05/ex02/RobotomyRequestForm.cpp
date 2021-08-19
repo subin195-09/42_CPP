@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 16:08:43 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:24:07 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:44:14 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=( RobotomyRequestForm const &
 	return *this;
 }
 
-void					RobotomyRequestForm::execute(Bureaucrat const &executor)
+void					RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	if (sign == false)
 		throw Form::UnsignedForm();

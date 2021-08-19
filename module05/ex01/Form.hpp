@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:48:05 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 15:08:23 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:16:35 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ class Form
 		Form();
 		Form( std::string _name, int _signGrade, int _exeGrade );
 		Form( Form const & src );
-		virtual ~Form();
+		~Form();
 		Form		&operator=( Form const & rhs );
-		std::string	getName(void) const;
-		bool		getSign(void) const;
-		int			getSignGrade(void) const;
-		int			getExeGrade(void) const;
+
+		std::string	const	&getName(void) const;
+		bool				getSign(void) const;
+		int					getSignGrade(void) const;
+		int					getExeGrade(void) const;
+
 		void		beSigned(Bureaucrat &burea);
 		class		GradeTooHighException : public std::exception
 		{

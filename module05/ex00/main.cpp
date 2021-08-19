@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:15:14 by skim              #+#    #+#             */
-/*   Updated: 2021/07/19 16:47:04 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:06:14 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 	}
 	catch (std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
@@ -27,16 +27,16 @@ int main(void)
 	}
 	catch (std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
 
-	Bureaucrat test3("test", 1);
-	Bureaucrat test4("test", 150);
+	Bureaucrat test3("test3", 1);
+	Bureaucrat test4("test4", 150);
 	std::cout << test3;
 	std::cout << test4;
 	try
 	{
-		test3.decreaseGrade();
+		test3.increaseGrade();
 	}
 	catch(const std::exception& e)
 	{
@@ -44,7 +44,7 @@ int main(void)
 	}
 	try
 	{
-		test4.increaseGrade();
+		test4.decreaseGrade();
 	}
 	catch(const std::exception& e)
 	{

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:28:45 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:03:23 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:34:56 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ class Bureaucrat
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
 		Bureaucrat	&operator=( Bureaucrat const & rhs );
-		std::string	getName() const ;
-		int			getGrade() const ;
+
+		std::string	const	&getName() const;
+		int					getGrade() const;
+
 		void		increaseGrade(void);
 		void		decreaseGrade(void);
+		
 		void		signForm(Form &form);
 		void		executeForm(Form &form);
 		class		GradeTooHighException : public std::exception

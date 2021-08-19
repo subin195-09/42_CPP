@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:15:14 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:29:14 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 17:00:43 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int main()
 	{
 		b.executeForm(shr);
 		b.executeForm(rob);
-		b.executeForm(pre);
 	}
 	catch(const std::exception& e)
 	{
@@ -68,8 +67,6 @@ int main()
 	try
 	{
 		c.executeForm(shr);
-		c.executeForm(rob);
-		c.executeForm(pre);
 	}
 	catch(const std::exception& e)
 	{

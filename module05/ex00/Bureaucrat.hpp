@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:28:45 by skim              #+#    #+#             */
-/*   Updated: 2021/08/05 20:25:22 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 15:56:21 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat	&operator=( Bureaucrat const & rhs );
 
-		std::string	getName() const ;
-		int			getGrade() const ;
-		
+		std::string	const	&getName() const;
+		int					getGrade() const;
+
 		void		increaseGrade(void);
 		void		decreaseGrade(void);
 		class		GradeTooHighExcept : public std::exception

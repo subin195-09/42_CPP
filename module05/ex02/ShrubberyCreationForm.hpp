@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:55:20 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 15:57:55 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:39:29 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm	&operator=( ShrubberyCreationForm const & rhs );
-		void	execute(Bureaucrat const &executor);
+
+		void	execute(Bureaucrat const &executor) const;
 		class FileOpenException: public std::exception {
 			virtual const char* what() const throw();
 		};

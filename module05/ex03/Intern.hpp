@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 17:39:54 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:48:21 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 17:06:48 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class Intern
 		Intern( Intern const & src );
 		~Intern();
 		Intern	&operator=( Intern const & rhs );
-		Form	*makeForm(std::string form_name, std::string target_form);
+
+		Form	*makeForm(std::string form_type, std::string form_name);
 		class		Unknown : public std::exception
 		{
 			public:

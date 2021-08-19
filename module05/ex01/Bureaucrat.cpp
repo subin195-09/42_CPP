@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:48:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/20 17:00:36 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:17:49 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ std::ostream	&operator<<( std::ostream & o, Bureaucrat const & i )
 	return o;
 }
 
-std::string	Bureaucrat::getName() const
+std::string	const	&Bureaucrat::getName() const
 {
 	return (name);
 }
 
-int			Bureaucrat::getGrade() const
+int					Bureaucrat::getGrade() const
 {
 	return (grade);
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 16:15:14 by skim              #+#    #+#             */
-/*   Updated: 2021/07/21 16:03:40 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 16:27:04 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main()
 	Form test10("test_10", 10, 5);
 	Form test75("test_75", 75, 70);
 	Form test150("test_150", 150, 145);
-	std::cout << a;
-	std::cout << b;
-	std::cout << c;
+	std::cout << test10;
+	std::cout << test75;
+	std::cout << test150;
 	std::cout << std::endl;
 	try
 	{
@@ -49,9 +49,7 @@ int main()
 	std::cout << std::endl;
 	try
 	{
-		c.signForm(test150);
-		c.signForm(test75);
-		c.signForm(test10);
+		test75.beSigned(c);
 	}
 	catch(const std::exception& e)
 	{
