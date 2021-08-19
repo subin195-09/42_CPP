@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 14:48:25 by skim              #+#    #+#             */
-/*   Updated: 2021/08/19 15:57:42 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/19 19:50:55 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Bureaucrat::Bureaucrat(std::string const _name, int _grade) : name(_name)
 	else if (this->grade < 1)
 		throw GradeTooHighExcept();
 }
-
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src )
 {
