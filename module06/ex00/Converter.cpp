@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Converter.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/20 17:19:14 by skim              #+#    #+#             */
+/*   Updated: 2021/08/20 17:19:15 by skim             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Converter.hpp"
 
 size_t		ft_strlen(const char *s)
@@ -29,6 +41,16 @@ Converter	&Converter::operator=( Converter const & rhs )
 	return *this;
 }
 
+bool		Converter::checkChar(void)
+{
+	if (ft_strlen(target) == 3 \
+			&& target[0] == '\'' \
+			&& target[2] == '\'')
+		return (true);
+	else
+		return (false);
+}
+
 void		Converter::checkPossible(void)
 {
 	try
@@ -42,13 +64,8 @@ void		Converter::checkPossible(void)
 	}
 	catch(const std::exception& e)
 	{
-		throw Converter::PossiblceException();
+		throw Converter::ImpossibleException();
 	}
-}
-
-const char	*Converter::PossiblceException::what(void) const throw()
-{
-	return ("Error : cannot convert🤔");
 }
 
 bool		Converter::checkInfNan()
@@ -61,40 +78,35 @@ bool		Converter::checkInfNan()
 		return (false);
 }
 
-bool		Converter::checkChar(void)
-{
-	if (ft_strlen(target) == 3 \
-			&& target[0] == '\'' \
-			&& target[2] == '\'')
-		return (true);
-	else
-		return (false);
-}
-
 void		Converter::toChar()
 {
 	std::cout << "char: ";
-	if (checkChar())
+
+	if (checkInfNan())
 	{
-		std::cout << "\'" << target[1] << "\'" << std::endl;
+		std::cout << "impossible" << std::endl;
 		return ;
 	}
-	if (checkInfNan())
-		throw std::string("impossible");
 
 	int	targetChar = static_cast<char>(targetFloat);
 	if (!(32 < targetChar  && targetChar < 127))
-		throw std::string("Non displayable");
+	{
+		std::cout << "Non displayable" << std::endl;
+		return ;
+	}
 	else
-		std::cout << "'" << static_cast<char>(targetChar) << "'" << std::endl;
+		std::cout << "\'" << static_cast<char>(targetChar) << "\'" << std::endl;
 }
 
 void		Converter::toInt()
 {
-	int	targetInt = static_cast<int>(targetFloat);
 	std::cout << "int: ";
+	int	targetInt = static_cast<int>(targetFloat);
 	if (checkInfNan())
-		throw std::string("impossible");
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
 	std::cout << targetInt << std::endl;
 }
 
@@ -117,9 +129,7 @@ void		Converter::toFloat()
 		return ;
 	}
 	std::cout << targetFloat;
-	if (targetFloat - static_cast<int>(targetFloat) == 0 && \
-	std::numeric_limits<int>::min() < static_cast<int>(targetFloat) && \
-	std::numeric_limits<int>::max() > static_cast<int>(targetFloat))
+	if (targetFloat - static_cast<int>(targetFloat) == 0)
 		std::cout << ".0f" << std::endl;
 	else
 		std::cout << "f" << std::endl;
@@ -145,10 +155,13 @@ void		Converter::toDouble()
 	}
 	double	targetDouble = static_cast<double>(targetFloat);
 	std::cout << targetDouble;
-	if (targetDouble - static_cast<int>(targetDouble) == 0 && \
-	std::numeric_limits<int>::min() < static_cast<int>(targetDouble) && \
-	std::numeric_limits<int>::max() > static_cast<int>(targetDouble))
+	if (targetDouble - static_cast<int>(targetDouble) == 0)
 		std::cout << ".0" << std::endl;
 	else
 		std::cout << std::endl;
+}
+
+const char	*Converter::ImpossibleException::what(void) const throw()
+{
+	return ("Error : cannot convert🤔");
 }

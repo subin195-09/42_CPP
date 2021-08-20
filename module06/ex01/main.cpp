@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:08:52 by skim              #+#    #+#             */
-/*   Updated: 2021/07/31 20:14:17 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/20 17:53:53 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ int main(void)
 	test->data2 = 42;
 	test->data3 = 42.42f;
 
-	std::cout << test->data1 << std::endl;
-	std::cout << test->data2 << std::endl;
-	std::cout << test->data3 << std::endl;
+	std::cout << test << std::endl;
+	std::cout << "data1 : " << test->data1 << std::endl;
+	std::cout << "data2 : " << test->data2 << std::endl;
+	std::cout << "data3 : " << test->data3 << std::endl;
+	std::cout << std::endl;
 
 	uintptr_t serialTest = serialize(test);
-	std::cout << std::endl;
-	std::cout << *reinterpret_cast<std::string *>(*reinterpret_cast<uintptr_t *>(serialTest)) << std::endl;
+	std::cout << serialTest << std::endl;
+	std::cout << "serialTest : " << reinterpret_cast<Data *>(serialTest) << std::endl;
 	std::cout << std::endl;
 
 	Data *deserialTest = deserialize(serialTest);
-	std::cout << deserialTest->data1 << std::endl;
-	std::cout << deserialTest->data2 << std::endl;
-	std::cout << deserialTest->data3 << std::endl;
-
-	// 왜 없어도 memory leak 이 나지 않을까....
-	delete reinterpret_cast<uintptr_t *>(serialTest);
+	std::cout << deserialTest<< std::endl;
+	std::cout << "deserial data1 : " << deserialTest->data1 << std::endl;
+	std::cout << "deserial data2 : " << deserialTest->data2 << std::endl;
+	std::cout << "deserial data3 : " << deserialTest->data3 << std::endl;
 }

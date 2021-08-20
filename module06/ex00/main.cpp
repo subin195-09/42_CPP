@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 20:03:25 by skim              #+#    #+#             */
-/*   Updated: 2021/07/23 14:09:14 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/20 16:51:04 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,36 +30,8 @@ int main(int ac, char *av[])
 		return (1);
 	}
 
-	try
-	{
-		conv.toChar();
-	}
-	catch(std::string & s)
-	{
-		std::cerr << s << '\n';
-	}
-	try
-	{
-		conv.toInt();
-	}
-	catch(std::string & s)
-	{
-		std::cerr << s << '\n';
-	}
-	try
-	{
-		conv.toFloat();
-	}
-	catch(std::string & s)
-	{
-		std::cerr << s << '\n';
-	}
-	try
-	{
-		conv.toDouble();
-	}
-	catch(std::string & s)
-	{
-		std::cerr << s << '\n';
-	}
+	conv.toChar();
+	conv.toInt();
+	conv.toFloat();
+	conv.toDouble();
 }

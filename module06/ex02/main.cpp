@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:51:47 by skim              #+#    #+#             */
-/*   Updated: 2021/07/31 20:32:53 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/20 18:11:44 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ Base	*generate(void)
 
 void	identify(Base *p)
 {
-	if (dynamic_cast<A *>(p))
+	if (dynamic_cast<A *>(p) != NULL)
 		std::cout << "A Type" << std::endl;
-	else if (dynamic_cast<B *>(p))
+	else if (dynamic_cast<B *>(p) != NULL)
 		std::cout << "B Type" << std::endl;
-	else if (dynamic_cast<C *>(p))
+	else if (dynamic_cast<C *>(p) != NULL)
 		std::cout << "C Type" << std::endl;
 	else
 		std::cout << "None Type" << std::endl;
@@ -88,11 +88,16 @@ int main(void)
 	identify(test);
 	std::cout << std::endl;
 
-	identify(*testBase);
-	identify(*testA);
-	identify(*testB);
-	identify(*testC);
-	identify(*test);
+	Base &refBase = *testBase;
+	Base &refA = *testA;
+	Base &refB = *testB;
+	Base &refC = *testC;
+	Base &ref = *test;
+	identify(refBase);
+	identify(refA);
+	identify(refB);
+	identify(refC);
+	identify(ref);
 
 	delete testBase;
 	delete testA;
