@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 21:11:16 by skim              #+#    #+#             */
-/*   Updated: 2021/08/21 17:41:48 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/21 20:10:00 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ class Array{
 	private:
 		T *arr;
 		unsigned int len;
+
+
 	public:
 		Array() {
 			arr = new T[0];
