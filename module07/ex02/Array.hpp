@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 21:11:16 by skim              #+#    #+#             */
-/*   Updated: 2021/08/01 19:25:51 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/21 17:41:48 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,32 +19,38 @@ template<typename T>
 class Array{
 	private:
 		T *arr;
-		unsigned int size;
+		unsigned int len;
 	public:
-		Array() {};
+		Array() {
+			arr = new T[0];
+			len = 0;
+		}
+
 		Array(unsigned int n) {
 			arr = new T[n];
-			size = n;
+			len = n;
 		}
-		Array(Array<T> const & rhs) { this->operator=(rhs); }
-		~Array() {
-			delete[] arr;
-		};
+
+		Array(Array<T> const & rhs) {
+			arr = new T[rhs.len];
+			len = rhs.len;
+			for (unsigned int i = 0; i < len; i++)
+				arr[i] = rhs.arr[i];
+		}
 
 		Array	&operator=( Array const &rhs ) {
-			if (this->size > 0)
-			{
-				delete[] arr;
-				arr = new T[rhs.size];
-			}
-			size = rhs.size;
-			for (unsigned int i = 0; i < rhs.size; i++)
+			delete[] arr;
+
+			arr = new T[rhs.len];
+			len = rhs.len;
+
+			for (unsigned int i = 0; i < rhs.len; i++)
 				this->arr[i] = rhs.arr[i];
 			return (*this);
 		}
 
 		T	&operator[]( unsigned int index ) {
-			if (index >= size)
+			if (index >= len)
 				throw OutIndexException();
 			return arr[index];
 		}
@@ -56,6 +62,14 @@ class Array{
 					return ("wrong index");
 				}
 		};
+
+		unsigned int	size() const{
+			return len;
+		}
+
+		~Array() {
+			delete[] arr;
+		}
 };
 
 #endif

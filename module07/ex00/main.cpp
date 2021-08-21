@@ -6,11 +6,46 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:15:09 by skim              #+#    #+#             */
-/*   Updated: 2021/07/31 20:47:57 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/21 16:54:50 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
+
+class Awesome {
+	private:
+		int _n;
+	public:
+		Awesome(int n) : _n(n) {}
+		Awesome(const Awesome &rhs)
+		{ _n = rhs._n; }
+		int getN() const
+		{ return _n; }
+
+		bool operator==( Awesome const & rhs ) const
+		{ return (this->_n == rhs._n); }
+
+		bool operator!=( Awesome const & rhs ) const
+		{ return (this->_n != rhs._n); }
+
+		bool operator>( Awesome const & rhs ) const
+		{ return (this->_n > rhs._n); }
+
+		bool operator<( Awesome const & rhs ) const
+		{ return (this->_n < rhs._n); }
+
+		bool operator>=( Awesome const & rhs ) const
+		{ return (this->_n >= rhs._n); }
+
+		bool operator<=( Awesome const & rhs ) const
+		{ return (this->_n <= rhs._n); }
+};
+
+std::ostream	&operator<<( std::ostream & o, Awesome const & i ) {
+	o << i.getN();
+	return o;
+}
+
 
 int main( void )
 {
@@ -29,6 +64,14 @@ int main( void )
 	std::cout << "c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "add test case" << std::endl;
+	Awesome test1( 1 );
+	Awesome test2( 2 );
+	std::cout << "test1 = " << test1 << ", test2 = " << test2 << std::endl;
+	std::cout << "min( test1, test2 ) = " << ::min( test1, test2 ) << std::endl;
+	std::cout << "max ( test1, test2 ) = " << ::max( test1, test2 ) << std::endl;
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:48:03 by skim              #+#    #+#             */
-/*   Updated: 2021/08/02 15:57:52 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/21 17:11:16 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,23 @@
 # include <iostream>
 
 template<typename T>
-void	iter(T *address, size_t len, void(* f)(T &array))
+void	iter(T *address, size_t len, void(* f)(T const &array))
 {
 	for (size_t i = 0; i < len; i++)
 		(* f)(address[i]);
-	std::cout << std::endl;
 }
 
 template<typename T>
-void	printAll(T &that)
+void	printAll(T const &that)
 {
 	std::cout << that << " ";
+}
+
+template<typename T>
+void	print(T const &x)
+{
+	std::cout << x << std::endl;
+	return;
 }
 
 #endif
