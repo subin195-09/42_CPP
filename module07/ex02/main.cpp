@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 21:11:32 by skim              #+#    #+#             */
-/*   Updated: 2021/08/21 17:52:11 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/21 18:15:13 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int	main(void)
 	Array<int> empty;
 	std::cout << "empty.size() = " << empty.size() << std::endl;
 	std::cout << std::endl;
+
+	int *testArr = new int[5];
+	for (int i = 0; i < 5; i++)
+	std::cout << testArr[i] << " ";
+	std::cout << std::endl;
+	delete[] testArr;
 
 	Array<int> arrInt(5);
 	Array<int> arrInt2(5);
