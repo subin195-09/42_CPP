@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:48:03 by skim              #+#    #+#             */
-/*   Updated: 2021/08/21 17:11:16 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/21 17:55:26 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 template<typename T>
 void	iter(T *address, size_t len, void(* f)(T const &array))
 {
+	if (address == NULL || len == 0 || f == NULL)
+		return ;
 	for (size_t i = 0; i < len; i++)
 		(* f)(address[i]);
 }
