@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 19:41:39 by skim              #+#    #+#             */
-/*   Updated: 2021/08/22 15:26:01 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/22 17:28:09 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ long		Span::shortestSpan()
 {
 	if (data.size() <= 1)
 		throw NotEnoughNumber();
+
+
 	sort(data.begin(), data.end());
 	std::vector<int>::iterator it = data.begin();
 	long min = *(it + 1) - *it;
@@ -68,6 +70,8 @@ long		Span::longestSpan()
 {
 	if (data.size() <= 1)
 		throw NotEnoughNumber();
+
+		
 	int max = *max_element(data.begin(), data.end());
 	int min = *min_element(data.begin(), data.end());
 	long ret = max - min;
