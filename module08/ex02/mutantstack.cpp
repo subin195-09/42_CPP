@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 20:42:00 by skim              #+#    #+#             */
-/*   Updated: 2021/08/11 19:31:33 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/22 15:36:38 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 #include "mutantstack.hpp"
 
 template<typename T>
-MutantStack<T>::MutantStack()
-{
-}
+MutantStack<T>::MutantStack() { }
 
 template<typename T>
 MutantStack<T>::MutantStack( const MutantStack & src )

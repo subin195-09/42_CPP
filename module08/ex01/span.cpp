@@ -6,7 +6,7 @@
 /*   By: skim <skim@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 19:41:39 by skim              #+#    #+#             */
-/*   Updated: 2021/08/11 17:02:31 by skim             ###   ########.fr       */
+/*   Updated: 2021/08/22 15:26:01 by skim             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		Span::addNumber( int number )
 
 void		Span::addNumber( std::vector<int>::iterator begin, std::vector<int>::iterator end )
 {
-	if (data.size() + end - begin > N)
+	if (data.size() + (end - begin) > N)
 		throw FullNumber();
 	std::vector<int>::iterator it = begin;
 	for (; it != end; ++it)
@@ -56,7 +56,7 @@ long		Span::shortestSpan()
 	sort(data.begin(), data.end());
 	std::vector<int>::iterator it = data.begin();
 	long min = *(it + 1) - *it;
-	for (; it != data.end() - 1; ++it)
+	for (; it != data.end() - 2; ++it)
 	{
 		if (*(it + 1) - *it < min)
 			min = *(it + 1) - *it;
@@ -68,7 +68,9 @@ long		Span::longestSpan()
 {
 	if (data.size() <= 1)
 		throw NotEnoughNumber();
-	int ret = *(max_element(data.begin(), data.end())) - *(min_element(data.begin(), data.end()));
+	int max = *max_element(data.begin(), data.end());
+	int min = *min_element(data.begin(), data.end());
+	long ret = max - min;
 	return (ret);
 }
 
